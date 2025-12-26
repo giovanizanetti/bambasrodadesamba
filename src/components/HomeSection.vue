@@ -335,4 +335,3 @@ const scrollTo = (sectionId) => {
   }
 }
 </style>
-

@@ -5,25 +5,30 @@
       <div class="content">
         <div class="text-content">
           <p class="paragraph">
-            Samba is one of Brazil's most iconic and beloved musical genres, deeply rooted in the country's 
-            cultural identity. Originating in the early 20th century in Rio de Janeiro, samba emerged from 
-            the fusion of African rhythms brought by enslaved people, European musical influences, and 
-            indigenous Brazilian sounds. It became a powerful expression of Brazilian identity, especially 
-            within Afro-Brazilian communities.
+            Samba is one of Brazil's most iconic and beloved musical genres,
+            deeply rooted in the country's cultural identity. Originating in the
+            early 20th century in Rio de Janeiro, samba emerged from the fusion
+            of African rhythms brought by enslaved people, European musical
+            influences, and indigenous Brazilian sounds. It became a powerful
+            expression of Brazilian identity, especially within Afro-Brazilian
+            communities.
           </p>
           <p class="paragraph">
-            The <strong>roda de samba</strong> (samba circle) is a traditional gathering where musicians 
-            come together in an informal setting to play, sing, and celebrate. This communal practice 
-            emphasizes participation, improvisation, and the joy of making music together. Unlike formal 
-            performances, roda de samba creates an intimate atmosphere where everyone—musicians and 
-            audience alike—becomes part of the musical experience.
+            The <strong>roda de samba</strong> (samba circle) is a traditional
+            gathering where musicians come together in an informal setting to
+            play, sing, and celebrate. This communal practice emphasizes
+            participation, improvisation, and the joy of making music together.
+            Unlike formal performances, roda de samba creates an intimate
+            atmosphere where everyone—musicians and audience alike—becomes part
+            of the musical experience.
           </p>
           <p class="paragraph">
-            For Brazilian culture, samba represents more than just music; it's a symbol of resistance, 
-            community, and national pride. It has played a crucial role in preserving African heritage 
-            in Brazil and continues to be a vital part of celebrations, especially during Carnival. 
-            Through samba, we keep alive the stories, rhythms, and spirit of Brazil, sharing this 
-            rich cultural treasure with the world.
+            For Brazilian culture, samba represents more than just music; it's a
+            symbol of resistance, community, and national pride. It has played a
+            crucial role in preserving African heritage in Brazil and continues
+            to be a vital part of celebrations, especially during Carnival.
+            Through samba, we keep alive the stories, rhythms, and spirit of
+            Brazil, sharing this rich cultural treasure with the world.
           </p>
         </div>
       </div>
@@ -31,8 +36,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .about-samba-section {
@@ -55,11 +59,15 @@
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, var(--brazil-green), var(--brazil-yellow));
+  background: linear-gradient(
+    to right,
+    var(--brazil-green),
+    var(--brazil-yellow)
+  );
   margin: 1rem auto 0;
   border-radius: 2px;
 }
@@ -111,4 +119,3 @@
   }
 }
 </style>
-

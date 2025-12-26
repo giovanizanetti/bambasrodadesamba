@@ -4,7 +4,11 @@
       <nav class="nav">
         <ul class="nav-links">
           <li><a href="#home" @click="scrollTo('home')">Home</a></li>
-          <li><a href="#about-samba" @click="scrollTo('about-samba')">About Samba</a></li>
+          <li>
+            <a href="#about-samba" @click="scrollTo('about-samba')"
+              >About Samba</a
+            >
+          </li>
           <li><a href="#contact" @click="scrollTo('contact')">Contact</a></li>
         </ul>
       </nav>
@@ -17,23 +21,25 @@
     </main>
 
     <footer class="footer">
-      <p>&copy; {{ new Date().getFullYear() }} Bambas Roda de Samba - Amsterdam</p>
+      <p>
+        &copy; {{ new Date().getFullYear() }} Bambas Roda de Samba - Amsterdam
+      </p>
     </footer>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import HomeSection from './components/HomeSection.vue'
-import AboutSambaSection from './components/AboutSambaSection.vue'
-import ContactSection from './components/ContactSection.vue'
+import { ref } from "vue";
+import HomeSection from "./components/HomeSection.vue";
+import AboutSambaSection from "./components/AboutSambaSection.vue";
+import ContactSection from "./components/ContactSection.vue";
 
 const scrollTo = (sectionId) => {
-  const element = document.getElementById(sectionId)
+  const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-}
+};
 </script>
 
 <style scoped>
@@ -104,4 +110,3 @@ main {
   }
 }
 </style>
-

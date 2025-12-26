@@ -10,14 +10,23 @@
           </div>
           <div class="info-item">
             <h3>Get in Touch</h3>
-            <p>For bookings, collaborations, or inquiries, please reach out to us.</p>
+            <p>
+              For bookings, collaborations, or inquiries, please reach out to
+              us.
+            </p>
           </div>
         </div>
         <div class="contact-form-container">
-          <p class="form-note">We'd love to hear from you! Send us a message and we'll get back to you soon.</p>
+          <p class="form-note">
+            We'd love to hear from you! Send us a message and we'll get back to
+            you soon.
+          </p>
           <div class="contact-display">
             <p><strong>Email:</strong> contact@bambasrodadesamba.nl</p>
-            <p><strong>Follow us:</strong> Check our social media for updates and upcoming events</p>
+            <p>
+              <strong>Follow us:</strong> Check our social media for updates and
+              upcoming events
+            </p>
           </div>
         </div>
       </div>
@@ -25,8 +34,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .contact-section {
@@ -49,11 +57,15 @@
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, var(--brazil-green), var(--brazil-yellow));
+  background: linear-gradient(
+    to right,
+    var(--brazil-green),
+    var(--brazil-yellow)
+  );
   margin: 1rem auto 0;
   border-radius: 2px;
 }
@@ -141,4 +153,3 @@
   }
 }
 </style>
-
