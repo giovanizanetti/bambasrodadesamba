@@ -244,7 +244,7 @@ const scrollTo = (sectionId) => {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 2rem 1rem;
+    padding: 3.5rem 1rem 2rem 1rem;
   }
 
   .hero-logo {
