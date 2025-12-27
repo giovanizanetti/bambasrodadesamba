@@ -222,7 +222,7 @@ const scrollTo = (sectionId) => {
   }
 
   .hero-logo {
-    height: 200px;
+    height: 300px;
   }
 
   .logo-container {
@@ -232,7 +232,7 @@ const scrollTo = (sectionId) => {
   .hero-image-container {
     max-width: 100%;
   }
-/* 
+  /* 
   .hero-image {
     border-radius: 50%;
   } */
@@ -244,7 +244,7 @@ const scrollTo = (sectionId) => {
   }
 
   .hero-logo {
-    height: 150px;
+    height: 225px;
   }
 
   .roda-title {
