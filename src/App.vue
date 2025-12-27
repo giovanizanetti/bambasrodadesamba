@@ -5,24 +5,24 @@
         <ul class="nav-links">
           <li>
             <a
-              href="#home"
-              @click="scrollTo('home')"
+              href="/"
+              @click.prevent="scrollTo('home')"
               aria-label="Go to home section"
               >Home</a
             >
           </li>
           <li>
             <a
-              href="#about-samba"
-              @click="scrollTo('about-samba')"
+              href="/about"
+              @click.prevent="scrollTo('about')"
               aria-label="Learn about samba"
               >About</a
             >
           </li>
           <li>
             <a
-              href="#contact"
-              @click="scrollTo('contact')"
+              href="/contact"
+              @click.prevent="scrollTo('contact')"
               aria-label="Contact and book us"
               >Contact</a
             >
@@ -34,7 +34,7 @@
 
     <main role="main">
       <HomeSection id="home" />
-      <AboutSambaSection id="about-samba" />
+      <AboutSection id="about" />
       <ContactSection id="contact" />
     </main>
 
@@ -50,9 +50,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import HomeSection from "./components/HomeSection.vue";
-import AboutSambaSection from "./components/AboutSambaSection.vue";
+import AboutSection from "./components/AboutSection.vue";
 import ContactSection from "./components/ContactSection.vue";
 import InstagramIcon from "./components/InstagramIcon.vue";
 
@@ -60,8 +60,41 @@ const scrollTo = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Update URL without hash
+    const path = sectionId === "home" ? "/" : `/${sectionId}`;
+    window.history.pushState({ section: sectionId }, "", path);
   }
 };
+
+const scrollToSectionFromPath = (pathname) => {
+  let sectionId = "home";
+
+  if (pathname === "/about") {
+    sectionId = "about";
+  } else if (pathname === "/contact") {
+    sectionId = "contact";
+  }
+
+  // Small delay to ensure DOM is ready
+  setTimeout(() => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 100);
+};
+
+onMounted(() => {
+  // Handle initial load
+  scrollToSectionFromPath(window.location.pathname);
+
+  // Handle browser back/forward buttons
+  window.addEventListener("popstate", (event) => {
+    const pathname = window.location.pathname;
+    scrollToSectionFromPath(pathname);
+  });
+});
 </script>
 
 <style scoped>
