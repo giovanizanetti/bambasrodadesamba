@@ -14,12 +14,12 @@
           @error="handleImageError"
           @load="handleImageLoad"
         />
-        <h2
+        <h1
           class="roda-title"
           :class="{ 'animate__animated animate__fadeInDownBig': isVisible }"
         >
           🇧🇷 RODA DE SAMBA 🇧🇷
-        </h2>
+        </h1>
         <div v-if="imageError" class="image-placeholder">
           <p>Band Photo</p>
           <p class="placeholder-subtitle">
