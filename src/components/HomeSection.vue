@@ -226,16 +226,20 @@ const scrollTo = (sectionId) => {
   }
 
   .logo-container {
-    top: -60px;
+    top: -200px;
   }
 
   .hero-image-container {
     max-width: 100%;
   }
-  /* 
+
   .hero-image {
-    border-radius: 50%;
-  } */
+    width: 75%;
+  }
+
+  .roda-title {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -248,16 +252,17 @@ const scrollTo = (sectionId) => {
   }
 
   .roda-title {
-    font-size: 10px;
-    z-index: 14;
+    font-size: 15px;
+    z-index: 13;
+    margin-left: -10px;
   }
 
   .logo-container {
-    top: -90px;
+    top: -170px;
   }
 
-  /* .hero-image {
-    border-radius: 50%;
-  } */
+  .hero-image {
+    width: 80%;
+  }
 }
 </style>
