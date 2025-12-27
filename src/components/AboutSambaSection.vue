@@ -41,7 +41,9 @@
 <style scoped>
 .about-samba-section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+  /* background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+   */
+  background-color: #030324;
 }
 
 .container {

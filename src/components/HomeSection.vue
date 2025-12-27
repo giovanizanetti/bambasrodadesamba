@@ -112,7 +112,7 @@ const scrollTo = (sectionId) => {
 <style scoped>
 .home-section {
   padding: 0;
-  background-color: #2f2f2f; /* Graphite color */
+  background-color: #101039;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -254,8 +254,13 @@ const scrollTo = (sectionId) => {
     height: 150px;
   }
 
+  .roda-title {
+    font-size: 10px;
+    z-index: 14;
+  }
+
   .logo-container {
-    top: -40px;
+    top: -90px;
   }
 
   .hero-image {
