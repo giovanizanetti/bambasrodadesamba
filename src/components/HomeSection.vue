@@ -253,6 +253,7 @@ onUnmounted(() => {
     font-size: 12px;
     z-index: 13;
     margin-left: -10px;
+    padding: 0 0.5rem;
   }
 
   .logo-container {
