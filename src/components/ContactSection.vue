@@ -35,7 +35,6 @@
         <div class="contact-form-container">
           <!-- Primary Contact Method: Instagram -->
           <div class="primary-contact">
-            <h3 class="contact-method-title">Send us a message on Instagram</h3>
             <a
               href="https://www.instagram.com/bambasrodadesamba/"
               target="_blank"
@@ -56,9 +55,7 @@
               </svg>
               <span class="button-text">Message us on Instagram</span>
             </a>
-            <p class="contact-hint">
-              We prefer Instagram messages for faster response!
-            </p>
+            <p class="contact-hint">Faster response!</p>
           </div>
 
           <!-- Secondary Contact Method: Email -->
@@ -287,7 +284,7 @@ import InstagramIcon from "./InstagramIcon.vue";
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
 
@@ -298,7 +295,7 @@ import InstagramIcon from "./InstagramIcon.vue";
   }
 
   .info-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .booking-content {
