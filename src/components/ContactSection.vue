@@ -284,26 +284,37 @@ import InstagramIcon from "./InstagramIcon.vue";
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1rem;
   }
 
   .section-title {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .contact-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-info {
+    gap: 1.5rem;
   }
 
   .info-item h3 {
     font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .info-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .booking-content {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .booking-title {
@@ -311,11 +322,14 @@ import InstagramIcon from "./InstagramIcon.vue";
   }
 
   .booking-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
   }
 
   .primary-contact {
-    padding: 1rem;
+    padding: 1.25rem 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .contact-method-title {
@@ -324,28 +338,46 @@ import InstagramIcon from "./InstagramIcon.vue";
   }
 
   .instagram-message-button {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    width: 100%;
+    justify-content: center;
   }
 
   .instagram-message-button svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   .contact-hint {
     font-size: 0.8rem;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .or-divider {
+    font-size: 0.9rem;
+    margin: 1rem 0;
   }
 
   .secondary-contact {
-    padding: 1.25rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .email-contact {
+    gap: 0.75rem;
+  }
+
+  .email-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
   }
 
   .email-link {
     font-size: 0.85rem;
-    white-space: nowrap;
     display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
 }
 </style>
