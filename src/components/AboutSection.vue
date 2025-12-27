@@ -1,7 +1,7 @@
 <template>
   <section class="about-samba-section">
     <div class="container">
-      <h2 class="section-title">About samba</h2>
+      <h2 class="section-title">About</h2>
       <div class="content">
         <div class="text-content">
           <p class="paragraph">
@@ -104,7 +104,7 @@
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
 
