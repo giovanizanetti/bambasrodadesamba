@@ -1,27 +1,44 @@
 <template>
   <div class="app">
-    <header class="header">
-      <nav class="nav">
+    <header class="header" role="banner">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="#home" @click="scrollTo('home')">Home</a></li>
           <li>
-            <a href="#about-samba" @click="scrollTo('about-samba')"
+            <a
+              href="#home"
+              @click="scrollTo('home')"
+              aria-label="Go to home section"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about-samba"
+              @click="scrollTo('about-samba')"
+              aria-label="Learn about samba"
               >About</a
             >
           </li>
-          <li><a href="#contact" @click="scrollTo('contact')">Contact</a></li>
+          <li>
+            <a
+              href="#contact"
+              @click="scrollTo('contact')"
+              aria-label="Contact and book us"
+              >Contact</a
+            >
+          </li>
         </ul>
         <InstagramIcon :show-text="false" class="nav-instagram" />
       </nav>
     </header>
 
-    <main>
+    <main role="main">
       <HomeSection id="home" />
       <AboutSambaSection id="about-samba" />
       <ContactSection id="contact" />
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <p>
         &copy; {{ new Date().getFullYear() }} Bambas Roda de Samba - Amsterdam
       </p>

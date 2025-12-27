@@ -9,7 +9,7 @@
         <img
           v-if="!imageError"
           :src="imageSrc"
-          alt="Bambas Roda de Samba performing"
+          alt="Bambas Roda de Samba - Brazilian samba band performing live in Amsterdam, playing traditional roda de samba music"
           class="hero-image"
           @error="handleImageError"
           @load="handleImageLoad"
@@ -29,7 +29,7 @@
         <div class="logo-container">
           <img
             :src="logoSrc"
-            alt="Bambas Roda de Samba Logo"
+            alt="Bambas Roda de Samba logo - Brazilian samba band Amsterdam"
             class="hero-logo"
           />
         </div>
