@@ -7,8 +7,9 @@
         <p class="booking-text">
           As long as we can bring our musical instruments and set up our center
           table, we'll bring lots of good vibes and Brazilian culture to your
-          party. Whether it's a private celebration, cultural event, or
-          festival, we're ready to create an unforgettable samba experience.
+          party. Whether it's a wedding, summer afternoon party, private
+          celebration, cultural event, or festival, we're ready to create an
+          unforgettable samba circle experience.
         </p>
       </div>
       <div class="contact-content">
@@ -295,7 +296,7 @@ import InstagramIcon from "./InstagramIcon.vue";
   }
 
   .info-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .booking-content {
