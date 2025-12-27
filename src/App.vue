@@ -28,7 +28,7 @@
             >
           </li>
         </ul>
-        <InstagramIcon :show-text="false" class="nav-instagram" />
+        <InstagramIcon :show-text="false" class="nav-instagram desktop-only" />
       </nav>
     </header>
 
@@ -42,10 +42,12 @@
       <p>
         &copy; {{ new Date().getFullYear() }} Bambas Roda de Samba - Amsterdam
       </p>
-      <div class="social-links">
-        <InstagramIcon :show-text="true" />
-      </div>
     </footer>
+
+    <!-- Fixed Instagram icon - always visible on mobile -->
+    <div class="fixed-instagram">
+      <InstagramIcon :show-text="false" />
+    </div>
   </div>
 </template>
 
@@ -130,6 +132,11 @@ onMounted(() => {
   color: var(--brazil-yellow);
 }
 
+/* Hide nav Instagram on mobile */
+.desktop-only {
+  display: block;
+}
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -175,21 +182,70 @@ main {
   color: var(--brazil-yellow);
 }
 
+/* Fixed Instagram icon */
+.fixed-instagram {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  background-color: var(--brazil-green);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fixed-instagram:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.fixed-instagram:active {
+  transform: scale(0.95);
+}
+
+.fixed-instagram :deep(.instagram-link) {
+  color: var(--text-light);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed-instagram :deep(.instagram-link svg) {
+  width: 28px;
+  height: 28px;
+}
+
 @media (max-width: 768px) {
   .nav {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+
+  .desktop-only {
+    display: none;
   }
 
   .nav-links {
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
-  .nav-instagram {
-    margin-top: 0.5rem;
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  /* Show fixed Instagram on mobile */
+  .fixed-instagram {
+    display: flex;
   }
 }
 </style>

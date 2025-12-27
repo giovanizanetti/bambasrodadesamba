@@ -148,7 +148,7 @@ const scrollTo = (sectionId) => {
   max-width: 1000px;
   height: auto;
   object-fit: contain;
-  border-radius: 40%;
+  border-radius: 50%;
   box-shadow: 0 8px 32px var(--shadow-lg);
   position: relative;
   opacity: 0;
@@ -232,10 +232,10 @@ const scrollTo = (sectionId) => {
   .hero-image-container {
     max-width: 100%;
   }
-
+/* 
   .hero-image {
-    border-radius: 30%;
-  }
+    border-radius: 50%;
+  } */
 }
 
 @media (max-width: 480px) {
@@ -256,8 +256,8 @@ const scrollTo = (sectionId) => {
     top: -90px;
   }
 
-  .hero-image {
-    border-radius: 30%;
-  }
+  /* .hero-image {
+    border-radius: 50%;
+  } */
 }
 </style>
