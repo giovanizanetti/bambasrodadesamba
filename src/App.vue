@@ -61,7 +61,15 @@ import InstagramIcon from "./components/InstagramIcon.vue";
 const scrollTo = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
+    const header = document.querySelector(".header");
+    const headerHeight = header ? header.offsetHeight : 0;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
 
     // Update URL without hash
     const path = sectionId === "home" ? "/" : `/${sectionId}`;
@@ -82,7 +90,16 @@ const scrollToSectionFromPath = (pathname) => {
   setTimeout(() => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      const header = document.querySelector(".header");
+      const headerHeight = header ? header.offsetHeight : 0;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   }, 100);
 };
