@@ -186,6 +186,11 @@ import InstagramIcon from "./InstagramIcon.vue";
   color: var(--text-dark);
 }
 
+.instagram-message-button:focus-visible {
+  outline: 3px solid var(--text-light);
+  outline-offset: 2px;
+}
+
 .instagram-message-button svg {
   width: 20px;
   height: 20px;
@@ -249,6 +254,12 @@ import InstagramIcon from "./InstagramIcon.vue";
 .email-link:hover {
   color: var(--brazil-green);
   text-decoration: underline;
+}
+
+.email-link:focus-visible {
+  outline: 2px solid var(--brazil-green);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .booking-content {
