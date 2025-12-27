@@ -225,7 +225,7 @@ main {
 @media (max-width: 768px) {
   .nav {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem 1.5rem;
   }
 
@@ -236,7 +236,7 @@ main {
   .nav-links {
     gap: 1rem;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .nav-links a {
