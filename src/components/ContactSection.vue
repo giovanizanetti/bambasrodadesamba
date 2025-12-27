@@ -22,15 +22,7 @@
           </div>
           <div class="info-item">
             <h3>Get in Touch</h3>
-            <p>
-              For bookings, collaborations, or inquiries, please reach out to
-              us.
-            </p>
-
-            <p class="form-note">
-              We'd love to hear from you! Send us a message and we'll get back
-              to you soon.
-            </p>
+            <p>For bookings, collaborations, or inquiries, reach out to us.</p>
           </div>
         </div>
         <div class="contact-form-container">
@@ -301,7 +293,6 @@ import InstagramIcon from "./InstagramIcon.vue";
 
   .booking-content {
     margin-top: 2rem;
-    padding-top: 2rem;
   }
 
   .booking-title {
