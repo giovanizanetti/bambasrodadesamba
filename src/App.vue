@@ -11,6 +11,7 @@
           </li>
           <li><a href="#contact" @click="scrollTo('contact')">Contact</a></li>
         </ul>
+        <InstagramIcon :show-text="false" class="nav-instagram" />
       </nav>
     </header>
 
@@ -24,6 +25,9 @@
       <p>
         &copy; {{ new Date().getFullYear() }} Bambas Roda de Samba - Amsterdam
       </p>
+      <div class="social-links">
+        <InstagramIcon :show-text="true" />
+      </div>
     </footer>
   </div>
 </template>
@@ -33,6 +37,7 @@ import { ref } from "vue";
 import HomeSection from "./components/HomeSection.vue";
 import AboutSambaSection from "./components/AboutSambaSection.vue";
 import ContactSection from "./components/ContactSection.vue";
+import InstagramIcon from "./components/InstagramIcon.vue";
 
 const scrollTo = (sectionId) => {
   const element = document.getElementById(sectionId);
@@ -50,8 +55,8 @@ const scrollTo = (sectionId) => {
 }
 
 .header {
-  background-color: var(--text-light);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-header);
+  box-shadow: 0 2px 8px var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -64,6 +69,15 @@ const scrollTo = (sectionId) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+}
+
+.nav-instagram {
+  color: var(--text-light);
+}
+
+.nav-instagram:hover {
+  color: var(--brazil-yellow);
 }
 
 .nav-links {
@@ -73,7 +87,7 @@ const scrollTo = (sectionId) => {
 }
 
 .nav-links a {
-  color: var(--text-dark);
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -96,6 +110,21 @@ main {
   margin-top: auto;
 }
 
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links :deep(.instagram-link) {
+  color: var(--text-light);
+}
+
+.social-links :deep(.instagram-link:hover) {
+  color: var(--brazil-yellow);
+}
+
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
@@ -107,6 +136,10 @@ main {
     gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .nav-instagram {
+    margin-top: 0.5rem;
   }
 }
 </style>

@@ -6,12 +6,13 @@
         <div class="text-content">
           <p class="paragraph">
             Samba is one of Brazil's most iconic and beloved musical genres,
-            deeply rooted in the country's cultural identity. Originating in the
-            early 20th century in Rio de Janeiro, samba emerged from the fusion
-            of African rhythms brought by enslaved people, European musical
-            influences, and indigenous Brazilian sounds. It became a powerful
-            expression of Brazilian identity, especially within Afro-Brazilian
-            communities.
+            deeply rooted in the country's cultural identity. Born in the late
+            19th century in Bahia state, samba emerged from the fusion of
+            African rhythms brought by enslaved people, European musical
+            influences, and indigenous Brazilian sounds. Migrants from Bahia
+            brought samba to Rio de Janeiro in the early 20th century, where it
+            gained widespread popularity and evolved into urban samba, becoming
+            a powerful expression of Brazilian identity.
           </p>
           <p class="paragraph">
             The <strong>roda de samba</strong> (samba circle) is a traditional
@@ -24,13 +25,21 @@
           </p>
           <p class="paragraph">
             For Brazilian culture, samba represents more than just music; it's a
-            symbol of resistance, community, and national pride. It has played a
-            crucial role in preserving African heritage in Brazil and continues
-            to be a vital part of celebrations, especially during Carnival.
-            Through samba, we keep alive the stories, rhythms, and spirit of
-            Brazil, sharing this rich cultural treasure with the world.
+            symbol of resistance, community, and national pride. It continues to
+            be a vital part of celebrations, keeping alive the stories, rhythms,
+            and spirit of Brazil.
           </p>
         </div>
+      </div>
+      <div class="booking-content">
+        <h3 class="booking-title">Book Us for Your Event</h3>
+        <p class="booking-text">
+          Bambas Roda de Samba can bring the authentic sounds of Brazil to your
+          event! As long as we can bring our instruments and set up our center
+          table, we'll bring lots of good vibes and Brazilian culture to your
+          party. Whether it's a private celebration, cultural event, or
+          festival, we're ready to create an unforgettable samba experience.
+        </p>
       </div>
     </div>
   </section>
@@ -41,9 +50,7 @@
 <style scoped>
 .about-samba-section {
   padding: 5rem 2rem;
-  /* background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
-   */
-  background-color: #030324;
+  background-color: var(--bg-header);
 }
 
 .container {
@@ -78,7 +85,7 @@
   background-color: var(--text-light);
   padding: 3rem;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px var(--shadow-sm);
 }
 
 .text-content {
@@ -101,6 +108,28 @@
   font-weight: 600;
 }
 
+.booking-content {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--bg-light);
+  text-align: center;
+}
+
+.booking-title {
+  font-size: 2rem;
+  color: var(--brazil-green);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.booking-text {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 @media (max-width: 768px) {
   .about-samba-section {
     padding: 3rem 1.5rem;
@@ -118,6 +147,19 @@
   .paragraph {
     font-size: 1rem;
     text-align: left;
+  }
+
+  .booking-content {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .booking-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-text {
+    font-size: 1rem;
   }
 }
 </style>

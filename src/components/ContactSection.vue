@@ -23,9 +23,9 @@
           </p>
           <div class="contact-display">
             <p><strong>Email:</strong> contact@bambasrodadesamba.nl</p>
-            <p>
-              <strong>Follow us:</strong> Check our social media for updates and
-              upcoming events
+            <p class="follow-us">
+              <strong>Follow us:</strong>
+              <InstagramIcon :show-text="true" />
             </p>
           </div>
         </div>
@@ -34,12 +34,14 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import InstagramIcon from "./InstagramIcon.vue";
+</script>
 
 <style scoped>
 .contact-section {
   padding: 5rem 2rem;
-  background-color: var(--text-light);
+  background-color: var(--bg-dark);
 }
 
 .container {
@@ -77,7 +79,7 @@
   background-color: var(--bg-light);
   padding: 3rem;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px var(--shadow-sm);
 }
 
 .contact-info {
@@ -130,6 +132,23 @@
 .contact-display strong {
   color: var(--brazil-green);
   font-weight: 600;
+}
+
+.follow-us {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.follow-us :deep(.instagram-link) {
+  color: var(--brazil-green);
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.follow-us :deep(.instagram-link:hover) {
+  color: var(--brazil-yellow);
 }
 
 @media (max-width: 768px) {

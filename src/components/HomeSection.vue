@@ -112,7 +112,7 @@ const scrollTo = (sectionId) => {
 <style scoped>
 .home-section {
   padding: 0;
-  background-color: #101039;
+  background-color: var(--bg-dark);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -149,14 +149,13 @@ const scrollTo = (sectionId) => {
   height: auto;
   object-fit: contain;
   border-radius: 40%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px var(--shadow-lg);
   position: relative;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1.2s ease-out, transform 1.2s ease-out,
     -webkit-mask-position 0.3s linear, mask-position 0.3s linear,
     filter 0.3s linear;
-
   filter: grayscale(0.3);
   -webkit-mask: var(--m);
   mask: var(--m);
@@ -167,8 +166,8 @@ const scrollTo = (sectionId) => {
 .home-section.is-visible .hero-image {
   opacity: 0.6;
   transform: translateY(0);
-  -webkit-mask-position: 0 0, 0 0;
-  mask-position: 0 0, 0 0;
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
   filter: grayscale(0);
 }
 
@@ -191,12 +190,10 @@ const scrollTo = (sectionId) => {
 
 .hero-logo {
   height: 400px;
-
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 8px 16px var(--shadow-md));
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Remove any background from logo */
 .hero-logo[src*=".png"] {
   background: none !important;
 }
@@ -204,15 +201,15 @@ const scrollTo = (sectionId) => {
 .roda-title {
   position: absolute;
   font-weight: bold;
-  color: white;
+  color: var(--text-light);
   text-align: center;
   white-space: nowrap;
   z-index: 10;
   opacity: 0;
-  background: #4c4141;
+  background: var(--bg-title);
   padding: 0 1rem;
   border-radius: 20px;
-  border: 1px solid white;
+  border: 1px solid var(--text-light);
 }
 
 .home-section.is-visible .roda-title {
@@ -239,10 +236,6 @@ const scrollTo = (sectionId) => {
   .hero-image {
     border-radius: 30%;
   }
-
-  .hero-image::after {
-    border-radius: 30%;
-  }
 }
 
 @media (max-width: 480px) {
@@ -264,10 +257,6 @@ const scrollTo = (sectionId) => {
   }
 
   .hero-image {
-    border-radius: 30%;
-  }
-
-  .hero-image::after {
     border-radius: 30%;
   }
 }

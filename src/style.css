@@ -11,6 +11,12 @@
   --text-dark: #2c3e50;
   --text-light: #ffffff;
   --bg-light: #f8f9fa;
+  --bg-dark: #101039;
+  --bg-header: #030324;
+  --bg-title: #4c4141;
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
 }
 
 html {
