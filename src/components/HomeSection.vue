@@ -11,6 +11,7 @@
           :src="imageSrc"
           alt="Bambas Roda de Samba - Brazilian samba band performing live in Amsterdam, playing traditional roda de samba music"
           class="hero-image"
+          loading="eager"
           @error="handleImageError"
           @load="handleImageLoad"
         />
@@ -31,6 +32,7 @@
             :src="logoSrc"
             alt="Bambas Roda de Samba logo - Brazilian samba band Amsterdam"
             class="hero-logo"
+            loading="eager"
           />
         </div>
       </div>
@@ -100,13 +102,6 @@ onUnmounted(() => {
     observer.disconnect();
   }
 });
-
-const scrollTo = (sectionId) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-};
 </script>
 
 <style scoped>
@@ -252,7 +247,7 @@ const scrollTo = (sectionId) => {
   }
 
   .roda-title {
-    font-size: 15px;
+    font-size: 12px;
     z-index: 13;
     margin-left: -10px;
   }

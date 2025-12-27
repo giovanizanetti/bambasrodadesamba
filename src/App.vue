@@ -45,7 +45,7 @@
     </footer>
 
     <!-- Fixed Instagram icon - always visible on mobile -->
-    <div class="fixed-instagram">
+    <div class="fixed-instagram" aria-label="Follow us on Instagram">
       <InstagramIcon :show-text="false" />
     </div>
   </div>
@@ -172,6 +172,12 @@ onMounted(() => {
   color: var(--brazil-green);
 }
 
+.nav-links a:focus-visible {
+  outline: 2px solid var(--brazil-yellow);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 main {
   flex: 1;
 }
@@ -202,8 +208,8 @@ main {
 /* Fixed Instagram icon */
 .fixed-instagram {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  right: max(1.5rem, env(safe-area-inset-right));
   z-index: 1000;
   background-color: var(--brazil-green);
   border-radius: 50%;
@@ -223,6 +229,11 @@ main {
 
 .fixed-instagram:active {
   transform: scale(0.95);
+}
+
+.fixed-instagram:focus-visible {
+  outline: 3px solid var(--brazil-yellow);
+  outline-offset: 3px;
 }
 
 .fixed-instagram :deep(.instagram-link) {
