@@ -1,7 +1,7 @@
 <template>
   <section class="about-samba-section">
     <div class="container">
-      <h2 class="section-title">About Samba</h2>
+      <h2 class="section-title">About samba</h2>
       <div class="content">
         <div class="text-content">
           <p class="paragraph">
@@ -30,16 +30,6 @@
             and spirit of Brazil.
           </p>
         </div>
-      </div>
-      <div class="booking-content">
-        <h3 class="booking-title">Book Us for Your Event</h3>
-        <p class="booking-text">
-          Bambas Roda de Samba can bring the authentic sounds of Brazil to your
-          event! As long as we can bring our instruments and set up our center
-          table, we'll bring lots of good vibes and Brazilian culture to your
-          party. Whether it's a private celebration, cultural event, or
-          festival, we're ready to create an unforgettable samba experience.
-        </p>
       </div>
     </div>
   </section>
@@ -108,28 +98,6 @@
   font-weight: 600;
 }
 
-.booking-content {
-  margin-top: 3rem;
-  padding-top: 3rem;
-  border-top: 2px solid var(--bg-light);
-  text-align: center;
-}
-
-.booking-title {
-  font-size: 2rem;
-  color: var(--brazil-green);
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-
-.booking-text {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
 @media (max-width: 768px) {
   .about-samba-section {
     padding: 3rem 1.5rem;
@@ -147,19 +115,6 @@
   .paragraph {
     font-size: 1rem;
     text-align: left;
-  }
-
-  .booking-content {
-    margin-top: 2rem;
-    padding-top: 2rem;
-  }
-
-  .booking-title {
-    font-size: 1.5rem;
-  }
-
-  .booking-text {
-    font-size: 1rem;
   }
 }
 </style>

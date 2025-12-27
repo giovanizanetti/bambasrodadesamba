@@ -6,7 +6,7 @@
           <li><a href="#home" @click="scrollTo('home')">Home</a></li>
           <li>
             <a href="#about-samba" @click="scrollTo('about-samba')"
-              >About Samba</a
+              >About</a
             >
           </li>
           <li><a href="#contact" @click="scrollTo('contact')">Contact</a></li>

@@ -1,7 +1,17 @@
 <template>
   <section class="contact-section">
     <div class="container">
-      <h2 class="section-title">Contact Us</h2>
+      <h2 class="section-title">Book us for your event!</h2>
+
+      <div class="booking-content">
+        <p class="booking-text">
+          Bambas Roda de Samba can bring the authentic sounds of Brazil to your
+          event! As long as we can bring our instruments and set up our center
+          table, we'll bring lots of good vibes and Brazilian culture to your
+          party. Whether it's a private celebration, cultural event, or
+          festival, we're ready to create an unforgettable samba experience.
+        </p>
+      </div>
       <div class="contact-content">
         <div class="contact-info">
           <div class="info-item">
@@ -151,6 +161,26 @@ import InstagramIcon from "./InstagramIcon.vue";
   color: var(--brazil-yellow);
 }
 
+.booking-content {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.booking-title {
+  font-size: 2rem;
+  color: var(--brazil-green);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.booking-text {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 @media (max-width: 768px) {
   .contact-section {
     padding: 3rem 1.5rem;
@@ -169,6 +199,19 @@ import InstagramIcon from "./InstagramIcon.vue";
 
   .info-item h3 {
     font-size: 1.2rem;
+  }
+
+  .booking-content {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .booking-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-text {
+    font-size: 1rem;
   }
 }
 </style>
