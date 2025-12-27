@@ -343,8 +343,9 @@ import InstagramIcon from "./InstagramIcon.vue";
   }
 
   .email-link {
-    font-size: 1rem;
-    word-break: break-word;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    display: inline-block;
   }
 }
 </style>

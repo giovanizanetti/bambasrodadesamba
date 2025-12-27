@@ -34,3 +34,39 @@ body {
   min-height: 100vh;
 }
 
+/* Custom Scrollbar Styling */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-header);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-dark);
+  border-radius: 5px;
+  border: 2px solid var(--bg-header);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1a3a;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-dark) var(--bg-header);
+}
+
+/* Mobile - Thinner scrollbar */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  * {
+    scrollbar-width: thin;
+  }
+}

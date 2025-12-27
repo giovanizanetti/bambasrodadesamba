@@ -213,7 +213,7 @@ onUnmounted(() => {
 
 @media (max-width: 968px) {
   .hero {
-    padding: 3rem 1.5rem;
+    padding: 2.55rem 1.5rem 3rem 1.5rem;
   }
 
   .hero-logo {
@@ -239,7 +239,7 @@ onUnmounted(() => {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 3.5rem 1rem 2rem 1rem;
+    padding: 3rem 1rem 2rem 1rem;
   }
 
   .hero-logo {
