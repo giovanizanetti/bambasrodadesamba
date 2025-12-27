@@ -14,6 +14,12 @@
           @error="handleImageError"
           @load="handleImageLoad"
         />
+        <h2
+          class="roda-title"
+          :class="{ 'animate__animated animate__fadeInDownBig': isVisible }"
+        >
+          🇧🇷 RODA DE SAMBA 🇧🇷
+        </h2>
         <div v-if="imageError" class="image-placeholder">
           <p>Band Photo</p>
           <p class="placeholder-subtitle">
@@ -138,11 +144,11 @@ const scrollTo = (sectionId) => {
     conic-gradient(from 135deg, var(--g)) 0 20px no-repeat,
     conic-gradient(from 225deg, var(--g)) -20px 0 no-repeat,
     conic-gradient(from 315deg, var(--g)) 0 -20px no-repeat;
-  width: 100%;
+  width: 70%;
   max-width: 1000px;
   height: auto;
   object-fit: contain;
-  border-radius: 24px;
+  border-radius: 40%;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   position: relative;
   opacity: 0;
@@ -150,76 +156,31 @@ const scrollTo = (sectionId) => {
   transition: opacity 1.2s ease-out, transform 1.2s ease-out,
     -webkit-mask-position 0.3s linear, mask-position 0.3s linear,
     filter 0.3s linear;
-  /* Vignette effect - fade on borders */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(0, 0, 0, 0.3),
-    inset 0 0 200px rgba(0, 0, 0, 0.2);
-  filter: grayscale(0.5);
+
+  filter: grayscale(0.3);
   -webkit-mask: var(--m);
   mask: var(--m);
   -webkit-mask-position: 20px 0, 0 20px, -20px 0, 0 -20px;
   mask-position: 20px 0, 0 20px, -20px 0, 0 -20px;
 }
 
-/* Opacity mask overlay - makes corners more opaque, center less opaque */
-.hero-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 24px;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.4) 30%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0) 70%,
-    transparent 100%
-  );
-  mix-blend-mode: multiply;
-  z-index: 2;
-}
-
 .home-section.is-visible .hero-image {
-  opacity: 1;
+  opacity: 0.6;
   transform: translateY(0);
   -webkit-mask-position: 0 0, 0 0;
   mask-position: 0 0, 0 0;
   filter: grayscale(0);
 }
 
-/* Vignette overlay for better fade effect */
-.hero-image-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 24px;
-  pointer-events: none;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    transparent 60%,
-    rgba(0, 0, 0, 0.1) 80%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-  z-index: 1;
-}
-
 .logo-container {
   position: absolute;
-  top: -220px;
+  top: -240px;
   left: 50%;
   transform: translateX(-50%) translateY(-30px);
   z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -230,10 +191,7 @@ const scrollTo = (sectionId) => {
 
 .hero-logo {
   height: 400px;
-  width: auto;
-  object-fit: contain;
-  background: transparent;
-  mix-blend-mode: normal;
+
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
   image-rendering: -webkit-optimize-contrast;
 }
@@ -243,42 +201,22 @@ const scrollTo = (sectionId) => {
   background: none !important;
 }
 
-.image-placeholder {
-  width: 100%;
-  max-width: 1000px;
-  min-height: 200px;
-  background: linear-gradient(
-    135deg,
-    var(--brazil-green) 0%,
-    var(--brazil-yellow) 100%
-  );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-size: 1.5rem;
+.roda-title {
+  position: absolute;
   font-weight: bold;
-  padding: 2rem;
+  color: white;
   text-align: center;
-  border-radius: 40px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(0, 0, 0, 0.3),
-    inset 0 0 200px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  z-index: 10;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  background: #4c4141;
+  padding: 0 1rem;
+  border-radius: 20px;
+  border: 1px solid white;
 }
 
-.home-section.is-visible .image-placeholder {
+.home-section.is-visible .roda-title {
   opacity: 1;
-  transform: translateY(0);
-}
-
-.placeholder-subtitle {
-  font-size: 0.9rem;
-  font-weight: normal;
-  margin-top: 0.5rem;
-  opacity: 0.9;
 }
 
 @media (max-width: 968px) {
@@ -299,11 +237,11 @@ const scrollTo = (sectionId) => {
   }
 
   .hero-image {
-    border-radius: 20px;
+    border-radius: 30%;
   }
 
-  .hero-image-container::after {
-    border-radius: 20px;
+  .hero-image::after {
+    border-radius: 30%;
   }
 }
 
@@ -321,17 +259,11 @@ const scrollTo = (sectionId) => {
   }
 
   .hero-image {
-    border-radius: 16px;
+    border-radius: 30%;
   }
 
-  .hero-image-container::after {
-    border-radius: 16px;
-  }
-
-  .image-placeholder {
-    min-height: 300px;
-    font-size: 1.2rem;
-    border-radius: 16px;
+  .hero-image::after {
+    border-radius: 30%;
   }
 }
 </style>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost:5173/#home -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module" src="./Bambas Roda de Samba - Amsterdam_files/client"></script>
+
+    
+    <link rel="icon" href="http://localhost:5173/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bambas Roda de Samba - Amsterdam</title>
+  <style type="text/css" data-vite-dev-id="/Users/giovanizanetti/Library/CloudStorage/GoogleDrive-zanetti.giovani@gmail.com/My Drive/Bambas/bambasrodadesamba/src/style.css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brazil-green: #009739;
+  --brazil-yellow: #FEDD00;
+  --brazil-blue: #012169;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --bg-light: #f8f9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+</style><style type="text/css" data-vite-dev-id="/Users/giovanizanetti/Library/CloudStorage/GoogleDrive-zanetti.giovani@gmail.com/My Drive/Bambas/bambasrodadesamba/src/components/HomeSection.vue?vue&amp;type=style&amp;index=0&amp;scoped=7bdb9c44&amp;lang.css">
+.home-section[data-v-7bdb9c44] {
+  padding: 0;
+  background-color: #2f2f2f; /* Graphite color */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero[data-v-7bdb9c44] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  padding: 4rem 2rem;
+}
+.hero-image-container[data-v-7bdb9c44] {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image[data-v-7bdb9c44] {
+  --g: #0000, #000 0.5deg 90deg, #0000 91deg;
+  --m: conic-gradient(from 45deg, var(--g)) 20px 0 no-repeat,
+    conic-gradient(from 135deg, var(--g)) 0 20px no-repeat,
+    conic-gradient(from 225deg, var(--g)) -20px 0 no-repeat,
+    conic-gradient(from 315deg, var(--g)) 0 -20px no-repeat;
+  width: 70%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 40%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out,
+    -webkit-mask-position 0.3s linear, mask-position 0.3s linear,
+    filter 0.3s linear;
+
+  filter: grayscale(0.3);
+  -webkit-mask: var(--m);
+  mask: var(--m);
+  -webkit-mask-position: 20px 0, 0 20px, -20px 0, 0 -20px;
+  mask-position: 20px 0, 0 20px, -20px 0, 0 -20px;
+}
+
+/* Opacity mask overlay - makes corners more opaque, center less opaque (elliptical) */
+.hero-image[data-v-7bdb9c44]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 40%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 25%,
+    rgba(0, 0, 0, 0.3) 35%,
+    rgba(0, 0, 0, 0.6) 45%,
+    rgba(0, 0, 0, 0.85) 55%,
+    #000 65%,
+    #000 100%
+  );
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+.home-section.is-visible .hero-image[data-v-7bdb9c44] {
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-mask-position: 0 0, 0 0;
+  mask-position: 0 0, 0 0;
+  filter: grayscale(0);
+}
+.logo-container[data-v-7bdb9c44] {
+  position: absolute;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-30px);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.home-section.is-visible .logo-container[data-v-7bdb9c44] {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.hero-logo[data-v-7bdb9c44] {
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Remove any background from logo */
+.hero-logo[src*=".png"][data-v-7bdb9c44] {
+  background: none !important;
+}
+.image-placeholder[data-v-7bdb9c44] {
+  width: 70%;
+  max-width: 1000px;
+  min-height: 200px;
+  background: linear-gradient(
+    135deg,
+    var(--brazil-green) 0%,
+    var(--brazil-yellow) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 40%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(0, 0, 0, 0.3),
+    inset 0 0 200px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+.home-section.is-visible .image-placeholder[data-v-7bdb9c44] {
+  opacity: 1;
+  transform: translateY(0);
+}
+.placeholder-subtitle[data-v-7bdb9c44] {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+@media (max-width: 968px) {
+.hero[data-v-7bdb9c44] {
+    padding: 3rem 1.5rem;
+}
+.hero-logo[data-v-7bdb9c44] {
+    height: 200px;
+}
+.logo-container[data-v-7bdb9c44] {
+    top: -60px;
+}
+.hero-image-container[data-v-7bdb9c44] {
+    max-width: 100%;
+}
+.hero-image[data-v-7bdb9c44] {
+    border-radius: 30%;
+}
+.hero-image[data-v-7bdb9c44]::after {
+    border-radius: 30%;
+}
+}
+@media (max-width: 480px) {
+.hero[data-v-7bdb9c44] {
+    padding: 2rem 1rem;
+}
+.hero-logo[data-v-7bdb9c44] {
+    height: 150px;
+}
+.logo-container[data-v-7bdb9c44] {
+    top: -40px;
+}
+.hero-image[data-v-7bdb9c44] {
+    border-radius: 30%;
+}
+.hero-image[data-v-7bdb9c44]::after {
+    border-radius: 30%;
+}
+.image-placeholder[data-v-7bdb9c44] {
+    min-height: 300px;
+    font-size: 1.2rem;
+    border-radius: 30%;
+}
+}
+</style><style type="text/css" data-vite-dev-id="/Users/giovanizanetti/Library/CloudStorage/GoogleDrive-zanetti.giovani@gmail.com/My Drive/Bambas/bambasrodadesamba/src/components/AboutSambaSection.vue?vue&amp;type=style&amp;index=0&amp;scoped=9ebac9c9&amp;lang.css">
+.about-samba-section[data-v-9ebac9c9] {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #ffffff 100%);
+}
+.container[data-v-9ebac9c9] {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.section-title[data-v-9ebac9c9] {
+  font-size: 2.5rem;
+  color: var(--brazil-green);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  position: relative;
+}
+.section-title[data-v-9ebac9c9]::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--brazil-green),
+    var(--brazil-yellow)
+  );
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+.content[data-v-9ebac9c9] {
+  background-color: var(--text-light);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.text-content[data-v-9ebac9c9] {
+  line-height: 1.9;
+}
+.paragraph[data-v-9ebac9c9] {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+.paragraph[data-v-9ebac9c9]:last-child {
+  margin-bottom: 0;
+}
+.paragraph strong[data-v-9ebac9c9] {
+  color: var(--brazil-green);
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+.about-samba-section[data-v-9ebac9c9] {
+    padding: 3rem 1.5rem;
+}
+.section-title[data-v-9ebac9c9] {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.content[data-v-9ebac9c9] {
+    padding: 2rem 1.5rem;
+}
+.paragraph[data-v-9ebac9c9] {
+    font-size: 1rem;
+    text-align: left;
+}
+}
+</style><style type="text/css" data-vite-dev-id="/Users/giovanizanetti/Library/CloudStorage/GoogleDrive-zanetti.giovani@gmail.com/My Drive/Bambas/bambasrodadesamba/src/components/ContactSection.vue?vue&amp;type=style&amp;index=0&amp;scoped=b5664408&amp;lang.css">
+.contact-section[data-v-b5664408] {
+  padding: 5rem 2rem;
+  background-color: var(--text-light);
+}
+.container[data-v-b5664408] {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.section-title[data-v-b5664408] {
+  font-size: 2.5rem;
+  color: var(--brazil-green);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  position: relative;
+}
+.section-title[data-v-b5664408]::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--brazil-green),
+    var(--brazil-yellow)
+  );
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+.contact-content[data-v-b5664408] {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background-color: var(--bg-light);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.contact-info[data-v-b5664408] {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.info-item h3[data-v-b5664408] {
+  color: var(--brazil-green);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.info-item p[data-v-b5664408] {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.contact-form-container[data-v-b5664408] {
+  display: flex;
+  flex-direction: column;
+}
+.form-note[data-v-b5664408] {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.contact-display[data-v-b5664408] {
+  background-color: var(--text-light);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border-left: 4px solid var(--brazil-green);
+}
+.contact-display p[data-v-b5664408] {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+.contact-display p[data-v-b5664408]:last-child {
+  margin-bottom: 0;
+}
+.contact-display strong[data-v-b5664408] {
+  color: var(--brazil-green);
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+.contact-section[data-v-b5664408] {
+    padding: 3rem 1.5rem;
+}
+.section-title[data-v-b5664408] {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.contact-content[data-v-b5664408] {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+}
+.info-item h3[data-v-b5664408] {
+    font-size: 1.2rem;
+}
+}
+</style><style type="text/css" data-vite-dev-id="/Users/giovanizanetti/Library/CloudStorage/GoogleDrive-zanetti.giovani@gmail.com/My Drive/Bambas/bambasrodadesamba/src/App.vue?vue&amp;type=style&amp;index=0&amp;scoped=7a7a37b1&amp;lang.css">
+.app[data-v-7a7a37b1] {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header[data-v-7a7a37b1] {
+  background-color: var(--text-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav[data-v-7a7a37b1] {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links[data-v-7a7a37b1] {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.nav-links a[data-v-7a7a37b1] {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.nav-links a[data-v-7a7a37b1]:hover {
+  color: var(--brazil-green);
+}
+main[data-v-7a7a37b1] {
+  flex: 1;
+}
+.footer[data-v-7a7a37b1] {
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+}
+@media (max-width: 768px) {
+.nav[data-v-7a7a37b1] {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+.nav-links[data-v-7a7a37b1] {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+}
+</style></head>
+  <body data-new-gr-c-s-check-loaded="14.1267.0" data-gr-ext-installed="" data-gr-ext-disabled="forever">
+    <div id="app" data-v-app=""><div data-v-7a7a37b1="" class="app"><header data-v-7a7a37b1="" class="header"><nav data-v-7a7a37b1="" class="nav"><ul data-v-7a7a37b1="" class="nav-links"><li data-v-7a7a37b1=""><a data-v-7a7a37b1="" href="http://localhost:5173/#home">Home</a></li><li data-v-7a7a37b1=""><a data-v-7a7a37b1="" href="http://localhost:5173/#about-samba">About Samba</a></li><li data-v-7a7a37b1=""><a data-v-7a7a37b1="" href="http://localhost:5173/#contact">Contact</a></li></ul></nav></header><main data-v-7a7a37b1=""><section data-v-7bdb9c44="" data-v-7a7a37b1="" class="home-section is-visible" id="home"><div data-v-7bdb9c44="" class="hero"><div data-v-7bdb9c44="" class="hero-image-container"><img data-v-7bdb9c44="" src="./Bambas Roda de Samba - Amsterdam_files/home-page.jpg" alt="Bambas Roda de Samba performing" class="hero-image"><!--v-if--><div data-v-7bdb9c44="" class="logo-container"><img data-v-7bdb9c44="" src="./Bambas Roda de Samba - Amsterdam_files/ChatGPT Image Dec 26, 2025, 11_37_49 PM.png" alt="Bambas Roda de Samba Logo" class="hero-logo"></div></div></div></section><section data-v-9ebac9c9="" data-v-7a7a37b1="" class="about-samba-section" id="about-samba"><div class="container" data-v-9ebac9c9=""><h2 class="section-title" data-v-9ebac9c9="">About Samba</h2><div class="content" data-v-9ebac9c9=""><div class="text-content" data-v-9ebac9c9=""><p class="paragraph" data-v-9ebac9c9=""> Samba is one of Brazil's most iconic and beloved musical genres, deeply rooted in the country's cultural identity. Originating in the early 20th century in Rio de Janeiro, samba emerged from the fusion of African rhythms brought by enslaved people, European musical influences, and indigenous Brazilian sounds. It became a powerful expression of Brazilian identity, especially within Afro-Brazilian communities. </p><p class="paragraph" data-v-9ebac9c9=""> The <strong data-v-9ebac9c9="">roda de samba</strong> (samba circle) is a traditional gathering where musicians come together in an informal setting to play, sing, and celebrate. This communal practice emphasizes participation, improvisation, and the joy of making music together. Unlike formal performances, roda de samba creates an intimate atmosphere where everyone—musicians and audience alike—becomes part of the musical experience. </p><p class="paragraph" data-v-9ebac9c9=""> For Brazilian culture, samba represents more than just music; it's a symbol of resistance, community, and national pride. It has played a crucial role in preserving African heritage in Brazil and continues to be a vital part of celebrations, especially during Carnival. Through samba, we keep alive the stories, rhythms, and spirit of Brazil, sharing this rich cultural treasure with the world. </p></div></div></div></section><section data-v-b5664408="" data-v-7a7a37b1="" class="contact-section" id="contact"><div class="container" data-v-b5664408=""><h2 class="section-title" data-v-b5664408="">Contact Us</h2><div class="contact-content" data-v-b5664408=""><div class="contact-info" data-v-b5664408=""><div class="info-item" data-v-b5664408=""><h3 data-v-b5664408="">Location</h3><p data-v-b5664408="">Amsterdam Area, Netherlands</p></div><div class="info-item" data-v-b5664408=""><h3 data-v-b5664408="">Get in Touch</h3><p data-v-b5664408=""> For bookings, collaborations, or inquiries, please reach out to us. </p></div></div><div class="contact-form-container" data-v-b5664408=""><p class="form-note" data-v-b5664408=""> We'd love to hear from you! Send us a message and we'll get back to you soon. </p><div class="contact-display" data-v-b5664408=""><p data-v-b5664408=""><strong data-v-b5664408="">Email:</strong> contact@bambasrodadesamba.nl</p><p data-v-b5664408=""><strong data-v-b5664408="">Follow us:</strong> Check our social media for updates and upcoming events </p></div></div></div></div></section></main><footer data-v-7a7a37b1="" class="footer"><p data-v-7a7a37b1=""> © 2025 Bambas Roda de Samba - Amsterdam </p></footer></div></div>
+    <script type="module" src="./Bambas Roda de Samba - Amsterdam_files/main.js"></script>
+  
+
+
+</body></html>
