@@ -238,6 +238,9 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
+  .hero-image-container {
+    margin-top: -5rem;
+  }
   .hero {
     padding: 3rem 1rem 2rem 1rem;
   }
@@ -254,6 +257,7 @@ onUnmounted(() => {
 
   .logo-container {
     top: -170px;
+    /* transform: translateX(-50%) translateY(-20%) !important; */
   }
 
   .hero-image {
