@@ -24,7 +24,7 @@ const { t } = useI18n();
   </header>
 </template>
 
-<style scoped>§
+<style scoped>
 .hero {
   min-height: 100vh;
   display: flex;
@@ -109,6 +109,7 @@ const { t } = useI18n();
   max-width: 560px;
   margin: 34px auto 0;
   line-height: 1.5;
+  padding: 0 24px;
 }
 .hero-btns {
   display: flex;

@@ -10,7 +10,7 @@ const messages = {
   en: {
     nav: { about: 'About', videos: 'Videos', gallery: 'Gallery', shows: 'Shows' },
     hero: {
-      tagline: 'Brazilian samba circle at your event 🇧🇷',
+      tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
       book: 'Book the band',
     },
     marquee: {
@@ -37,10 +37,11 @@ const messages = {
       tag: 'Shows',
       heading: 'Upcoming shows',
       tickets: 'Tickets',
-      placeholder: '[ Replace with your upcoming shows. ]',
+      location: 'Location',
+      freeEntry: 'Free entry',
       items: [
-        { day: '21', month: 'Jun', title: 'Roda de Samba', info: '📍 [ Venue · City ] · 8 PM' },
-        { day: '05', month: 'Jul', title: 'Samba Festival', info: '📍 [ Venue · City ] · 7 PM' },
+        { day: '26', month: 'Jul', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
+        { day: '30', month: 'Aug', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
       ],
     },
     book: {
@@ -61,7 +62,7 @@ const messages = {
       errorMid: 'or at',
     },
     footer: {
-      tagline: 'Bambas Roda de Samba — samba de raiz to bring any party to life. Made with swing. 🥁',
+      tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
       menu: 'Menu',
       links: { about: 'About', videos: 'Videos', gallery: 'Gallery', shows: 'Shows', book: 'Book us' },
       rights: '© 2026 Bambas Roda de Samba · All rights reserved',
@@ -72,7 +73,7 @@ const messages = {
   nl: {
     nav: { about: 'Over ons', videos: "Video's", gallery: 'Galerij', shows: 'Shows' },
     hero: {
-      tagline: 'Braziliaanse roda de samba op jouw evenement 🇧🇷',
+      tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
       book: 'Boek de band',
     },
     marquee: {
@@ -99,10 +100,12 @@ const messages = {
       tag: 'Shows',
       heading: 'Aankomende shows',
       tickets: 'Tickets',
+      location: 'Locatie',
+      freeEntry: 'Gratis toegang',
       placeholder: '[ Vervang dit door jullie aankomende shows. ]',
       items: [
-        { day: '21', month: 'Jun', title: 'Roda de Samba', info: '📍 [ Locatie · Stad ] · 20:00' },
-        { day: '05', month: 'Jul', title: 'Samba Festival', info: '📍 [ Locatie · Stad ] · 19:00' },
+        { day: '26', month: 'Jul', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
+        { day: '30', month: 'Aug', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
       ],
     },
     book: {
@@ -123,7 +126,7 @@ const messages = {
       errorMid: 'of op',
     },
     footer: {
-      tagline: 'Bambas Roda de Samba — samba de raiz die elk feest tot leven brengt. Gemaakt met swing. 🥁',
+      tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
       menu: 'Menu',
       links: { about: 'Over ons', videos: "Video's", gallery: 'Galerij', shows: 'Shows', book: 'Boek ons' },
       rights: '© 2026 Bambas Roda de Samba · Alle rechten voorbehouden',
@@ -134,7 +137,7 @@ const messages = {
   pt: {
     nav: { about: 'Sobre', videos: 'Vídeos', gallery: 'Galeria', shows: 'Shows' },
     hero: {
-      tagline: 'Roda de samba brasileira no seu evento 🇧🇷',
+      tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
       book: 'Contrate a banda',
     },
     marquee: {
@@ -161,10 +164,12 @@ const messages = {
       tag: 'Shows',
       heading: 'Próximos shows',
       tickets: 'Ingressos',
+      location: 'Localização',
+      freeEntry: 'Entrada gratuita',
       placeholder: '[ Substitua pelos seus próximos shows. ]',
       items: [
-        { day: '21', month: 'Jun', title: 'Roda de Samba', info: '📍 [ Local · Cidade ] · 20h' },
-        { day: '05', month: 'Jul', title: 'Festival de Samba', info: '📍 [ Local · Cidade ] · 19h' },
+        { day: '26', month: 'Jul', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
+        { day: '30', month: 'Aug', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
       ],
     },
     book: {
@@ -185,7 +190,7 @@ const messages = {
       errorMid: 'ou em',
     },
     footer: {
-      tagline: 'Bambas Roda de Samba — samba de raiz para dar vida a qualquer festa. Feito com suingue. 🥁',
+      tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
       menu: 'Menu',
       links: { about: 'Sobre', videos: 'Vídeos', gallery: 'Galeria', shows: 'Shows', book: 'Contrate-nos' },
       rights: '© 2026 Bambas Roda de Samba · Todos os direitos reservados',
