@@ -16,6 +16,7 @@ const { t } = useI18n();
       <div class="hero-logo">
         <img :src="heroLogo" alt="Bambas Roda de Samba" />
       </div>
+      <h1 class="hero-h1">{{ t("hero.h1") }}</h1>
       <p class="hero-tagline">{{ t("hero.tagline") }}</p>
       <div class="hero-btns">
         <a href="#book" class="btn btn-primary">{{ t("hero.book") }}</a>
@@ -103,6 +104,17 @@ const { t } = useI18n();
   }
 }
 
+.hero-h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .hero-tagline {
   font-size: clamp(16px, 2vw, 20px);
   color: rgba(251, 247, 240, 0.85);

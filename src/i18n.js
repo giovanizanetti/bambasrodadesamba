@@ -10,6 +10,7 @@ const messages = {
   en: {
     nav: { about: 'About', videos: 'Videos', gallery: 'Gallery', shows: 'Shows' },
     hero: {
+      h1: 'Bambas Roda de Samba — Brazilian Samba Band in Amsterdam',
       tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
       book: 'Book the band',
     },
@@ -78,6 +79,7 @@ const messages = {
   nl: {
     nav: { about: 'Over ons', videos: "Video's", gallery: 'Galerij', shows: 'Shows' },
     hero: {
+      h1: 'Bambas Roda de Samba — Braziliaanse Sambaband in Amsterdam',
       tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
       book: 'Boek de band',
     },
@@ -147,6 +149,7 @@ const messages = {
   pt: {
     nav: { about: 'Sobre', videos: 'Vídeos', gallery: 'Galeria', shows: 'Shows' },
     hero: {
+      h1: 'Bambas Roda de Samba — Banda de Samba Brasileira em Amsterdã',
       tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
       book: 'Contrate a banda',
     },
