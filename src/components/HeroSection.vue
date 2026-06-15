@@ -17,7 +17,7 @@ import heroLogo from '../assets/photos/logo_hero_circle.png'
       </p>
       <div class="hero-btns">
         <a href="#book" class="btn btn-primary">Book the band</a>
-        <a href="#video" class="btn btn-ghost">▶ Watch videos</a>
+        <a href="#video" class="btn btn-ghost">▶ Watch us play</a>
       </div>
     </div>
   </header>
@@ -31,13 +31,13 @@ import heroLogo from '../assets/photos/logo_hero_circle.png'
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-bg .img {
   position: absolute; inset: 0; background-size: cover; background-position: center;
-  opacity: .30; filter: grayscale(.15);
+  opacity: .62; filter: grayscale(.05);
 }
 .hero-bg .grad {
   position: absolute; inset: 0;
   background:
-    radial-gradient(90% 70% at 50% 45%, rgba(253,118,3,.18), transparent 60%),
-    linear-gradient(180deg, rgba(14,14,14,.55), rgba(14,14,14,.82) 70%, var(--ink));
+    radial-gradient(90% 70% at 50% 45%, rgba(253,118,3,.15), transparent 60%),
+    linear-gradient(180deg, rgba(14,14,14,.35), rgba(14,14,14,.72) 72%, var(--ink));
 }
 .hero-inner { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
 

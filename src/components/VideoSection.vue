@@ -23,12 +23,21 @@ const start = () => {
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-tag">Watch</div>
-        <h2>Live videos</h2>
+        <h2>Live performance</h2>
       </div>
       <div class="video-stage">
         <div class="video-player" :class="{ playing }" @click="start">
           <img class="poster" :src="poster" alt="Bambas live" />
-          <video ref="videoEl" preload="none" playsinline controls :poster="poster"></video>
+          <video
+            ref="videoEl"
+            preload="none"
+            playsinline
+            controls
+            controlsList="nofullscreen noplaybackrate nodownload"
+            disablePictureInPicture
+            @dblclick.prevent
+            :poster="poster"
+          ></video>
           <div class="play" aria-label="Play video"></div>
         </div>
       </div>
