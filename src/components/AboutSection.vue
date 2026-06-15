@@ -35,6 +35,7 @@ const { t } = useI18n()
 .about-photo img { width: 100%; height: 100%; object-fit: cover; }
 
 @media (max-width: 900px) {
+  #about { padding-top: 48px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-photo { position: static; }
 }

@@ -84,7 +84,7 @@ onUnmounted(() => {
           <button class="lb-btn lb-prev" aria-label="Previous" @click.stop="prev">&#8249;</button>
           <figure class="lb-stage">
             <img :src="active.src" :alt="altOf(current)" />
-            <figcaption>{{ current + 1 }} / {{ tiles.length }} · {{ altOf(current) }}</figcaption>
+            <figcaption>{{ current + 1 }} / {{ tiles.length }}</figcaption>
           </figure>
           <button class="lb-btn lb-next" aria-label="Next" @click.stop="next">&#8250;</button>
         </div>
@@ -104,7 +104,11 @@ onUnmounted(() => {
 .g.wide { grid-column: span 2; }
 
 @media (max-width: 900px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  #gallery { padding-top: 48px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; }
+  .gallery-grid .g { aspect-ratio: 1; }
+  .g.tall { grid-row: auto; }
+  .g.wide { grid-column: auto; }
 }
 
 /* Lightbox */
