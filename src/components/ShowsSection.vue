@@ -1,18 +1,17 @@
 <script setup>
-const shows = [
-  { day: '21', month: 'Jun', title: 'Roda de Samba', info: '📍 [ Venue · City ] · 8 PM' },
-  { day: '05', month: 'Jul', title: 'Samba Festival', info: '📍 [ Venue · City ] · 7 PM' },
-]
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <section id="shows">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Shows</div>
-        <h2>Upcoming shows</h2>
+        <div class="sec-tag">{{ t('shows.tag') }}</div>
+        <h2>{{ t('shows.heading') }}</h2>
       </div>
-      <div v-for="(show, i) in shows" :key="i" class="show-row">
+      <div v-for="(show, i) in t('shows.items')" :key="i" class="show-row">
         <div class="show-date">
           <div class="d">{{ show.day }}</div>
           <div class="m">{{ show.month }}</div>
@@ -21,9 +20,9 @@ const shows = [
           <h3>{{ show.title }}</h3>
           <p>{{ show.info }}</p>
         </div>
-        <a href="#book" class="btn btn-primary">Tickets</a>
+        <a href="#book" class="btn btn-primary">{{ t('shows.tickets') }}</a>
       </div>
-      <p class="placeholder">[ Replace with your upcoming shows. ]</p>
+      <p class="placeholder">{{ t('shows.placeholder') }}</p>
     </div>
   </section>
 </template>

@@ -1,41 +1,23 @@
 <script setup>
 import guitarist from '../assets/photos/guitarist-portrait.jpg'
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <section id="about">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">About</div>
-        <h2 style="color: var(--ink)">Samba &amp; the Roda de Samba</h2>
+        <div class="sec-tag">{{ t('about.tag') }}</div>
+        <h2 style="color: var(--ink)">{{ t('about.heading') }}</h2>
       </div>
       <div class="about-grid">
         <div class="about-text">
-          <p class="lead">
-            Samba is one of Brazil's most iconic and beloved musical genres, deeply rooted in the
-            country's cultural identity.
-          </p>
-          <p>
-            Born in the late 19th century in Bahia state, samba emerged from the fusion of African
-            rhythms brought by enslaved people, European musical influences, and indigenous Brazilian
-            sounds. Migrants from Bahia brought samba to Rio de Janeiro in the early 20th century, where
-            it gained widespread popularity and evolved into urban samba, becoming a powerful expression
-            of Brazilian identity.
-          </p>
-          <p>
-            The roda de samba (samba circle) is a traditional gathering where musicians come together in
-            an informal setting to play, sing, and celebrate. This communal practice emphasizes
-            participation, improvisation, and the joy of making music together. Unlike formal
-            performances, roda de samba creates an intimate atmosphere where everyone—musicians and
-            audience alike—becomes part of the musical experience.
-          </p>
-          <p>
-            For Brazilian culture, samba represents more than just music; it's a symbol of resistance,
-            community, and national pride. It continues to be a vital part of celebrations, keeping alive
-            the stories, rhythms, and spirit of Brazil.
-          </p>
+          <p class="lead">{{ t('about.lead') }}</p>
+          <p v-for="(para, i) in t('about.paragraphs')" :key="i">{{ para }}</p>
         </div>
-        <div class="about-photo"><img :src="guitarist" alt="Bambas member playing" /></div>
+        <div class="about-photo"><img :src="guitarist" :alt="t('about.photoAlt')" /></div>
       </div>
     </div>
   </section>

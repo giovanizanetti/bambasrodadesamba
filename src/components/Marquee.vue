@@ -1,5 +1,9 @@
 <script setup>
-const items = ['Live samba', 'Roda de samba', 'Parties', 'Weddings', 'Corporate events', 'Birthdays']
+import { computed } from 'vue'
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
+const items = computed(() => t('marquee.items'))
 </script>
 
 <template>

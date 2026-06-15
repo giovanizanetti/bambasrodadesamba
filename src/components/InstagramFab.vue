@@ -1,9 +1,13 @@
 <script setup>
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
+
 const IG_URL = 'https://www.instagram.com/bambasrodadesamba/'
 </script>
 
 <template>
-  <a :href="IG_URL" target="_blank" rel="noopener" class="ig-float" aria-label="Follow us on Instagram">
+  <a :href="IG_URL" target="_blank" rel="noopener" class="ig-float" :aria-label="t('ig.follow')">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5.5" />
       <circle cx="12" cy="12" r="4.2" />

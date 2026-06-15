@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import poster from '../assets/photos/live-bar-1.jpg'
+import poster from '../assets/photos/live-bar-2.jpg'
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
 
 const VIDEO_SRC = '/video/institucional.mp4'
 
@@ -22,12 +25,12 @@ const start = () => {
   <section id="video">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Watch</div>
-        <h2>Live performance</h2>
+        <div class="sec-tag">{{ t('video.tag') }}</div>
+        <h2>{{ t('video.heading') }}</h2>
       </div>
       <div class="video-stage">
         <div class="video-player" :class="{ playing }" @click="start">
-          <img class="poster" :src="poster" alt="Bambas live" />
+          <img class="poster" :src="poster" :alt="t('video.posterAlt')" />
           <video
             ref="videoEl"
             preload="none"

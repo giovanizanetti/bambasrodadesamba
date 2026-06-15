@@ -1,13 +1,11 @@
 <script setup>
 import logoFooter from '../assets/photos/logo_footer_darkbg.png'
+import { useI18n } from '../i18n'
 
-const menu = [
-  { href: '#about', label: 'About' },
-  { href: '#video', label: 'Videos' },
-  { href: '#gallery', label: 'Gallery' },
-  { href: '#shows', label: 'Shows' },
-  { href: '#book', label: 'Book us' },
-]
+const { t } = useI18n()
+
+const menuKeys = ['about', 'videos', 'gallery', 'shows', 'book']
+const menuHrefs = { about: '#about', videos: '#video', gallery: '#gallery', shows: '#shows', book: '#book' }
 </script>
 
 <template>
@@ -16,14 +14,14 @@ const menu = [
       <div class="foot-grid">
         <div class="foot-brand">
           <img :src="logoFooter" alt="Bambas" />
-          <p>Bambas Roda de Samba — samba de raiz to bring any party to life. Made with swing. 🥁</p>
+          <p>{{ t('footer.tagline') }}</p>
         </div>
         <div class="foot-col">
-          <h4>Menu</h4>
-          <a v-for="item in menu" :key="item.href" class="txt" :href="item.href">{{ item.label }}</a>
+          <h4>{{ t('footer.menu') }}</h4>
+          <a v-for="key in menuKeys" :key="key" class="txt" :href="menuHrefs[key]">{{ t('footer.links')[key] }}</a>
         </div>
       </div>
-      <div class="foot-bottom">© 2026 Bambas Roda de Samba · All rights reserved</div>
+      <div class="foot-bottom">{{ t('footer.rights') }}</div>
     </div>
   </footer>
 </template>

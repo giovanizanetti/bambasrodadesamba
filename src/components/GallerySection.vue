@@ -1,19 +1,29 @@
 <script setup>
 import { ref, computed, onUnmounted, watch } from 'vue'
 import overhead1 from '../assets/photos/band-overhead-1.jpg'
-import overhead2 from '../assets/photos/band-overhead-2.jpg'
 import overhead3 from '../assets/photos/band-overhead-3.jpg'
 import pandeiro from '../assets/photos/pandeiro-player.jpg'
 import guitarist from '../assets/photos/guitarist-portrait.jpg'
 import singer from '../assets/photos/singer-cavaquinho.jpg'
+import liveBar2 from '../assets/photos/live-bar-2.jpg'
+import band from '../assets/photos/band.jpg'
+import percusionist from '../assets/photos/percusionist.JPG'
+import { useI18n } from '../i18n'
+
+const { t } = useI18n()
+
 const tiles = [
-  { src: overhead1, alt: 'Bambas live', cls: 'wide tall' },
-  { src: pandeiro, alt: 'Pandeiro', cls: '' },
-  { src: guitarist, alt: 'Guitar', cls: 'tall' },
-  { src: singer, alt: 'Singer', cls: '' },
-  { src: overhead2, alt: 'Full roda', cls: 'wide' },
-  { src: overhead3, alt: 'Band', cls: '' },
+  { src: overhead1, cls: 'wide tall' },
+  { src: pandeiro, cls: '' },
+  { src: guitarist, cls: 'tall' },
+  { src: singer, cls: '' },
+  { src: band, cls: 'wide' },
+  { src: percusionist, cls: 'tall' },
+  { src: liveBar2, cls: 'wide' },
+  { src: overhead3, cls: '' },
 ]
+
+const altOf = (i) => t('gallery.alts')[i] ?? ''
 
 const current = ref(-1)
 const isOpen = computed(() => current.value >= 0)
@@ -46,8 +56,8 @@ onUnmounted(() => {
   <section id="gallery">
     <div class="wrap">
       <div class="sec-head">
-        <div class="sec-tag">Gallery</div>
-        <h2 style="color: var(--ink)">Moments from the roda</h2>
+        <div class="sec-tag">{{ t('gallery.tag') }}</div>
+        <h2 style="color: var(--ink)">{{ t('gallery.heading') }}</h2>
       </div>
       <div class="gallery-grid">
         <div
@@ -57,12 +67,12 @@ onUnmounted(() => {
           :class="tile.cls"
           role="button"
           tabindex="0"
-          :aria-label="`Open image: ${tile.alt}`"
+          :aria-label="`Open image: ${altOf(i)}`"
           @click="open(i)"
           @keydown.enter="open(i)"
           @keydown.space.prevent="open(i)"
         >
-          <img :src="tile.src" :alt="tile.alt" loading="lazy" />
+          <img :src="tile.src" :alt="altOf(i)" loading="lazy" />
         </div>
       </div>
     </div>
@@ -73,8 +83,8 @@ onUnmounted(() => {
           <button class="lb-btn lb-close" aria-label="Close" @click="close">&times;</button>
           <button class="lb-btn lb-prev" aria-label="Previous" @click.stop="prev">&#8249;</button>
           <figure class="lb-stage">
-            <img :src="active.src" :alt="active.alt" />
-            <figcaption>{{ current + 1 }} / {{ tiles.length }} · {{ active.alt }}</figcaption>
+            <img :src="active.src" :alt="altOf(current)" />
+            <figcaption>{{ current + 1 }} / {{ tiles.length }} · {{ altOf(current) }}</figcaption>
           </figure>
           <button class="lb-btn lb-next" aria-label="Next" @click.stop="next">&#8250;</button>
         </div>
