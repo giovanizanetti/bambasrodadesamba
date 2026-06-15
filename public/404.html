@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bambas Roda de Samba</title>
+    <script>
+      // GitHub Pages has no server-side routing: any path other than "/"
+      // returns this 404 page. The site is a single page that uses hash
+      // anchors for its sections (#about, #shows, ...), so we translate a
+      // path-style section link (e.g. /shows) into its hash equivalent and
+      // redirect to the app, landing on the right section instead of a 404.
+      (function () {
+        var path = window.location.pathname.replace(/\/+$/, '');
+        var section = path.split('/').pop();
+        var sections = ['about', 'video', 'gallery', 'shows', 'book'];
+        var hash = sections.indexOf(section) !== -1 ? '#' + section : '';
+        window.location.replace('/' + window.location.search + hash);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
