@@ -122,4 +122,18 @@ const { t } = useI18n();
     grid-column: 1 / -1;
   }
 }
+
+@media (max-width: 560px) {
+  .show-row {
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    padding: 20px 18px;
+  }
+  .show-date .d {
+    font-size: 31px;
+  }
+  .show-info h3 {
+    font-size: 19px;
+  }
+}
 </style>
