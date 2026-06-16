@@ -4,7 +4,6 @@ import { useI18n } from '../i18n'
 
 const { t } = useI18n()
 
-const IG_HANDLE = '@bambasrodadesamba'
 const IG_URL = 'https://www.instagram.com/bambasrodadesamba/'
 const EMAIL = 'info@bambasrodadesamba.com'
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${EMAIL}`
@@ -73,14 +72,6 @@ const onSubmit = async () => {
         <div>
           <h2 v-html="t('book.heading')"></h2>
           <p>{{ t('book.text') }}</p>
-          <div class="contact-line">
-            <div class="ic">@</div>
-            <a :href="IG_URL" target="_blank" rel="noopener">{{ IG_HANDLE }}</a>
-          </div>
-          <div class="contact-line">
-            <div class="ic">✉</div>
-            <a :href="`mailto:${EMAIL}`">{{ EMAIL }}</a>
-          </div>
         </div>
         <form class="book-form" novalidate @submit.prevent="onSubmit">
           <div class="field" :class="{ invalid: errors.name }">
@@ -126,7 +117,7 @@ const onSubmit = async () => {
 </template>
 
 <style scoped>
-#book { background: linear-gradient(135deg, var(--orange) 0%, #E25E00 100%); color: #0E0E0E; }
+#book { background: linear-gradient(135deg, var(--orange) 0%, #E25E00 100%); color: #0E0E0E; padding-top: 48px; }
 .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .book-grid h2 { font-size: clamp(38px, 5vw, 66px); line-height: .95; text-transform: uppercase; color: #0E0E0E; }
 .book-grid p { font-size: 19px; line-height: 1.6; margin: 22px 0 30px; font-weight: 500; max-width: 460px; }
@@ -148,14 +139,16 @@ const onSubmit = async () => {
 .form-msg.ok { color: var(--orange-bright); }
 .form-msg.err { color: #ff8a80; }
 .form-msg a { text-decoration: underline; }
-.contact-line { display: flex; align-items: center; gap: 14px; font-weight: 600; font-size: 17px; margin-bottom: 14px; }
-.contact-line .ic {
-  width: 42px; height: 42px; border-radius: 50%; background: #0E0E0E; color: var(--orange);
-  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
-}
-.contact-line a:hover { text-decoration: underline; }
 
 @media (max-width: 900px) {
   .book-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 560px) {
+  .book-grid { gap: 30px; }
+  .book-grid p { font-size: 16px; margin: 16px 0 24px; }
+  .book-grid h2 { font-size: clamp(32px, 11vw, 44px); }
+  .book-form { padding: 26px 20px; border-radius: 18px; }
+  .book-form .field { margin-bottom: 14px; }
 }
 </style>

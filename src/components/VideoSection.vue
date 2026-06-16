@@ -49,7 +49,7 @@ const start = () => {
 </template>
 
 <style scoped>
-#video { background: var(--ink); }
+#video { background: var(--ink); padding-top: 48px; }
 .video-stage { display: flex; justify-content: center; }
 .video-player {
   position: relative; width: min(380px, 86vw); aspect-ratio: 9/16; border-radius: 20px;

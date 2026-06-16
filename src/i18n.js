@@ -70,6 +70,7 @@ const messages = {
     footer: {
       tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
       menu: 'Menu',
+      contact: 'Contact',
       links: { about: 'About', videos: 'Videos', gallery: 'Gallery', shows: 'Shows', book: 'Book us' },
       rights: '© 2026 Bambas Roda de Samba · All rights reserved',
     },
@@ -140,6 +141,7 @@ const messages = {
     footer: {
       tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
       menu: 'Menu',
+      contact: 'Contact',
       links: { about: 'Over ons', videos: "Video's", gallery: 'Galerij', shows: 'Shows', book: 'Boek ons' },
       rights: '© 2026 Bambas Roda de Samba · Alle rechten voorbehouden',
     },
@@ -210,6 +212,7 @@ const messages = {
     footer: {
       tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
       menu: 'Menu',
+      contact: 'Contato',
       links: { about: 'Sobre', videos: 'Vídeos', gallery: 'Galeria', shows: 'Shows', book: 'Contrate-nos' },
       rights: '© 2026 Bambas Roda de Samba · Todos os direitos reservados',
     },

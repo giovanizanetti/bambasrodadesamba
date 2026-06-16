@@ -39,3 +39,8 @@ section { padding: 100px 0; }
 .btn-primary:hover { background: var(--orange-bright); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(253,118,3,.35); }
 .btn-ghost { background: transparent; color: var(--cream); border: 2px solid rgba(251,247,240,.3); }
 .btn-ghost:hover { border-color: var(--orange); color: var(--orange-bright); }
+
+@media (max-width: 600px) {
+  section { padding: 64px 0; }
+  .wrap { padding: 0 18px; }
+}
