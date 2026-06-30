@@ -1,20 +1,25 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import poster from '../assets/photos/live-bar-2.jpg'
+import birthdayPoster from '../assets/photos/wagner-moura-1.jpg'
 import { useI18n } from '../i18n'
 
 const { t } = useI18n()
 
-const VIDEO_SRC = '/video/institucional.mp4'
+const videos = [
+  { src: '/video/institucional.mp4', poster, captionKey: '', featured: false },
+  { src: '/video/wagner-moura-birthday.mp4', poster: birthdayPoster, captionKey: 'video.birthdayCaption', featured: true },
+]
 
-const videoEl = ref(null)
-const playing = ref(false)
+const videoEls = ref([])
+const setVideoRef = (el, i) => { if (el) videoEls.value[i] = el }
+const playing = reactive({})
 
-const start = () => {
-  if (playing.value) return
-  playing.value = true
-  const v = videoEl.value
-  v.src = VIDEO_SRC
+const start = (i) => {
+  if (playing[i]) return
+  playing[i] = true
+  const v = videoEls.value[i]
+  v.src = videos[i].src
   v.load()
   const p = v.play()
   if (p && p.catch) p.catch(() => {})
@@ -29,20 +34,23 @@ const start = () => {
         <h2>{{ t('video.heading') }}</h2>
       </div>
       <div class="video-stage">
-        <div class="video-player" :class="{ playing }" @click="start">
-          <img class="poster" :src="poster" :alt="t('video.posterAlt')" />
-          <video
-            ref="videoEl"
-            preload="none"
-            playsinline
-            controls
-            controlsList="nofullscreen noplaybackrate nodownload"
-            disablePictureInPicture
-            @dblclick.prevent
-            :poster="poster"
-          ></video>
-          <div class="play" aria-label="Play video"></div>
-        </div>
+        <figure v-for="(vid, i) in videos" :key="i" class="video-item" :class="{ featured: vid.featured }">
+          <div class="video-player" :class="{ playing: playing[i] }" @click="start(i)">
+            <img class="poster" :src="vid.poster" :alt="t('video.posterAlt')" />
+            <video
+              :ref="el => setVideoRef(el, i)"
+              preload="none"
+              playsinline
+              controls
+              controlsList="nofullscreen noplaybackrate nodownload"
+              disablePictureInPicture
+              @dblclick.prevent
+              :poster="vid.poster"
+            ></video>
+            <div class="play" aria-label="Play video"></div>
+          </div>
+          <figcaption v-if="vid.captionKey" class="video-caption">{{ t(vid.captionKey) }}</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -50,7 +58,12 @@ const start = () => {
 
 <style scoped>
 #video { background: var(--ink); padding-top: 48px; }
-.video-stage { display: flex; justify-content: center; }
+.video-stage { display: flex; justify-content: center; align-items: flex-start; gap: 28px; flex-wrap: wrap; }
+.video-item { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.video-caption {
+  color: var(--cream); font-size: 15px; font-weight: 600; text-align: center;
+  letter-spacing: .02em; opacity: .85;
+}
 .video-player {
   position: relative; width: min(380px, 86vw); aspect-ratio: 9/16; border-radius: 20px;
   overflow: hidden; background: #000; box-shadow: 0 24px 70px rgba(0,0,0,.6);
@@ -70,4 +83,9 @@ const start = () => {
   border-bottom: 16px solid transparent; margin-left: 6px;
 }
 .video-player.playing .play, .video-player.playing .poster { opacity: 0; pointer-events: none; }
+
+/* On stacked (mobile) layout, show the Wagner Moura birthday video first */
+@media (max-width: 835px) {
+  .video-item.featured { order: -1; }
+}
 </style>

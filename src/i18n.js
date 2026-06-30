@@ -28,11 +28,10 @@ const messages = {
         "For Brazilian culture, samba represents more than just music; it's a symbol of resistance, community, and national pride. It continues to be a vital part of celebrations, keeping alive the stories, rhythms, and spirit of Brazil.",
       ],
     },
-    video: { tag: 'Watch', heading: 'Live performance', posterAlt: 'Bambas live' },
+    video: { tag: 'Watch', heading: 'Live performance', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50th birthday" },
     gallery: {
       tag: 'Gallery',
       heading: 'Moments from the roda',
-      alts: ['Bambas live', 'Pandeiro', 'Guitar', 'Singer', 'Singer and the crowd', 'Percussionist', 'Live in the bar', 'Band'],
     },
     shows: {
       tag: 'Shows',
@@ -98,11 +97,10 @@ const messages = {
         'Voor de Braziliaanse cultuur is samba meer dan alleen muziek; het is een symbool van verzet, gemeenschap en nationale trots. Het blijft een essentieel onderdeel van vieringen en houdt de verhalen, ritmes en de geest van Brazilië levend.',
       ],
     },
-    video: { tag: 'Kijken', heading: 'Live optreden', posterAlt: 'Bambas live' },
+    video: { tag: 'Kijken', heading: 'Live optreden', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50e verjaardag" },
     gallery: {
       tag: 'Galerij',
       heading: 'Momenten uit de roda',
-      alts: ['Bambas live', 'Pandeiro', 'Gitaar', 'Zanger', 'Zanger en het publiek', 'Percussionist', 'Live in de bar', 'Band'],
     },
     shows: {
       tag: 'Shows',
@@ -169,11 +167,10 @@ const messages = {
         'Para a cultura brasileira, o samba representa mais do que música; é um símbolo de resistência, comunidade e orgulho nacional. Continua sendo parte essencial das celebrações, mantendo vivas as histórias, os ritmos e o espírito do Brasil.',
       ],
     },
-    video: { tag: 'Assista', heading: 'Ao vivo', posterAlt: 'Bambas ao vivo' },
+    video: { tag: 'Assista', heading: 'Ao vivo', posterAlt: 'Bambas ao vivo', birthdayCaption: 'Aniversário de 50 anos do Wagner Moura' },
     gallery: {
       tag: 'Galeria',
       heading: 'Momentos da roda',
-      alts: ['Bambas ao vivo', 'Pandeiro', 'Violão', 'Cantor', 'Cantor e o público', 'Percussionista', 'Ao vivo no bar', 'Banda'],
     },
     shows: {
       tag: 'Shows',
