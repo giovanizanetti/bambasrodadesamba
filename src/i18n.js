@@ -27,6 +27,8 @@ const messages = {
         'The roda de samba (samba circle) is a traditional gathering where musicians come together in an informal setting to play, sing, and celebrate. This communal practice emphasizes participation, improvisation, and the joy of making music together. Unlike formal performances, roda de samba creates an intimate atmosphere where everyone—musicians and audience alike—becomes part of the musical experience.',
         "For Brazilian culture, samba represents more than just music; it's a symbol of resistance, community, and national pride. It continues to be a vital part of celebrations, keeping alive the stories, rhythms, and spirit of Brazil.",
       ],
+      different: "Bambas is a traditional roda de samba — samba de raiz, played from the roots. Brazilian music is everywhere right now, but we don't do pop covers: we play the songs that mean something to us, the classics of samba's great composers.",
+      creed: 'We play with our hearts. What we play has to mean something to us.',
     },
     video: { tag: 'Watch', heading: 'Live performance', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50th birthday" },
     gallery: {
@@ -46,7 +48,7 @@ const messages = {
     },
     book: {
       heading: 'Want samba<br>at your party?',
-      text: 'Weddings, birthdays, corporate events or just a good time with friends — Bambas brings the full roda to you. Based in Amsterdam, playing throughout Europe.',
+      text: 'Weddings, birthdays, corporate events or just a good time with friends — Bambas brings the full roda to you. Based near Amsterdam, playing across the whole of the Netherlands and beyond.',
       name: 'Name',
       namePh: 'Your name',
       email: 'Email',
@@ -96,6 +98,8 @@ const messages = {
         'De roda de samba (sambakring) is een traditionele samenkomst waar muzikanten in een informele setting samenkomen om te spelen, te zingen en te vieren. Deze gezamenlijke traditie draait om deelname, improvisatie en het plezier van samen muziek maken. Anders dan bij formele optredens creëert de roda de samba een intieme sfeer waarin iedereen — muzikanten én publiek — deel wordt van de muzikale ervaring.',
         'Voor de Braziliaanse cultuur is samba meer dan alleen muziek; het is een symbool van verzet, gemeenschap en nationale trots. Het blijft een essentieel onderdeel van vieringen en houdt de verhalen, ritmes en de geest van Brazilië levend.',
       ],
+      different: 'Bambas is een traditionele roda de samba — samba de raiz, gespeeld vanuit de wortels. Braziliaanse muziek is nu overal, maar wij spelen geen popcovers: wij spelen de nummers die iets voor ons betekenen, de klassiekers van de grote sambacomponisten.',
+      creed: 'Wij spelen met ons hart. Wat we spelen moet iets voor ons betekenen.',
     },
     video: { tag: 'Kijken', heading: 'Live optreden', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50e verjaardag" },
     gallery: {
@@ -116,7 +120,7 @@ const messages = {
     },
     book: {
       heading: 'Samba op<br>jouw feest?',
-      text: 'Bruiloften, verjaardagen, bedrijfsevenementen of gewoon een gezellige avond met vrienden — Bambas brengt de complete roda naar jou toe. Gevestigd in Amsterdam, actief in heel Europa.',
+      text: 'Bruiloften, verjaardagen, bedrijfsevenementen of gewoon een gezellige avond met vrienden — Bambas brengt de complete roda naar jou toe. Gevestigd rond Amsterdam, actief in heel Nederland en daarbuiten.',
       name: 'Naam',
       namePh: 'Je naam',
       email: 'E-mail',
@@ -166,6 +170,8 @@ const messages = {
         'A roda de samba é um encontro tradicional em que os músicos se reúnem de forma informal para tocar, cantar e celebrar. Essa prática coletiva valoriza a participação, a improvisação e a alegria de fazer música juntos. Diferente de apresentações formais, a roda de samba cria uma atmosfera intimista em que todos — músicos e público — fazem parte da experiência musical.',
         'Para a cultura brasileira, o samba representa mais do que música; é um símbolo de resistência, comunidade e orgulho nacional. Continua sendo parte essencial das celebrações, mantendo vivas as histórias, os ritmos e o espírito do Brasil.',
       ],
+      different: 'A Bambas é uma roda de samba tradicional — samba de raiz, tocado desde a raiz. A música brasileira está em alta, mas não fazemos versões pop: tocamos as canções que significam algo para nós, os clássicos dos grandes compositores do samba.',
+      creed: 'Tocamos com o coração. O que tocamos precisa significar algo para nós.',
     },
     video: { tag: 'Assista', heading: 'Ao vivo', posterAlt: 'Bambas ao vivo', birthdayCaption: 'Aniversário de 50 anos do Wagner Moura' },
     gallery: {
@@ -186,7 +192,7 @@ const messages = {
     },
     book: {
       heading: 'Quer samba<br>na sua festa?',
-      text: 'Casamentos, aniversários, eventos corporativos ou só um bom momento entre amigos — a Bambas leva a roda completa até você. Sediada em Amsterdã, tocando por toda a Europa.',
+      text: 'Casamentos, aniversários, eventos corporativos ou só um bom momento entre amigos — a Bambas leva a roda completa até você. Sediada perto de Amsterdã, tocando por toda a Holanda e além.',
       name: 'Nome',
       namePh: 'Seu nome',
       email: 'E-mail',
