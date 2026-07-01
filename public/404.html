@@ -14,7 +14,8 @@
         var path = window.location.pathname.replace(/\/+$/, '');
         var section = path.split('/').pop();
         if (section === 'gallery') section = 'photos'; // backward-compat for the old /gallery link
-        var sections = ['about', 'video', 'photos', 'shows', 'book'];
+        if (section === 'video') section = 'videos'; // backward-compat for the old /video link
+        var sections = ['about', 'videos', 'photos', 'shows', 'book'];
         var hash = sections.indexOf(section) !== -1 ? '#' + section : '';
         window.location.replace('/' + window.location.search + hash);
       })();

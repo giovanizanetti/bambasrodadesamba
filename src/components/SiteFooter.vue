@@ -5,7 +5,7 @@ import { useI18n } from '../i18n'
 const { t } = useI18n()
 
 const menuKeys = ['about', 'videos', 'gallery', 'shows', 'book']
-const menuHrefs = { about: '#about', videos: '#video', gallery: '#photos', shows: '#shows', book: '#book' }
+const menuHrefs = { about: '#about', videos: '#videos', gallery: '#photos', shows: '#shows', book: '#book' }
 
 const IG_HANDLE = '@bambasrodadesamba'
 const IG_URL = 'https://www.instagram.com/bambasrodadesamba/'
