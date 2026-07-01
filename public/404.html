@@ -13,7 +13,8 @@
       (function () {
         var path = window.location.pathname.replace(/\/+$/, '');
         var section = path.split('/').pop();
-        var sections = ['about', 'video', 'gallery', 'shows', 'book'];
+        if (section === 'gallery') section = 'photos'; // backward-compat for the old /gallery link
+        var sections = ['about', 'video', 'photos', 'shows', 'book'];
         var hash = sections.indexOf(section) !== -1 ? '#' + section : '';
         window.location.replace('/' + window.location.search + hash);
       })();

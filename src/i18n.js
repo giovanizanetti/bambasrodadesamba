@@ -8,7 +8,7 @@ export const locales = [
 
 const messages = {
   en: {
-    nav: { about: 'About', videos: 'Videos', gallery: 'Gallery', shows: 'Shows' },
+    nav: { about: 'About', videos: 'Videos', gallery: 'Photos', shows: 'Shows' },
     hero: {
       h1: 'Bambas Roda de Samba — Brazilian Samba Band in Amsterdam',
       tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
@@ -32,7 +32,7 @@ const messages = {
     },
     video: { tag: 'Watch', heading: 'Live performance', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50th birthday" },
     gallery: {
-      tag: 'Gallery',
+      tag: 'Photos',
       heading: 'Moments from the roda',
     },
     shows: {
@@ -72,14 +72,14 @@ const messages = {
       tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
       menu: 'Menu',
       contact: 'Contact',
-      links: { about: 'About', videos: 'Videos', gallery: 'Gallery', shows: 'Shows', book: 'Book us' },
+      links: { about: 'About', videos: 'Videos', gallery: 'Photos', shows: 'Shows', book: 'Book us' },
       rights: '© 2026 Bambas Roda de Samba · All rights reserved',
     },
     ig: { follow: 'Follow us on Instagram' },
   },
 
   nl: {
-    nav: { about: 'Over ons', videos: "Video's", gallery: 'Galerij', shows: 'Shows' },
+    nav: { about: 'Over ons', videos: "Video's", gallery: "Foto's", shows: 'Shows' },
     hero: {
       h1: 'Bambas Roda de Samba — Braziliaanse Sambaband in Amsterdam',
       tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
@@ -103,7 +103,7 @@ const messages = {
     },
     video: { tag: 'Kijken', heading: 'Live optreden', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50e verjaardag" },
     gallery: {
-      tag: 'Galerij',
+      tag: "Foto's",
       heading: 'Momenten uit de roda',
     },
     shows: {
@@ -144,14 +144,14 @@ const messages = {
       tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
       menu: 'Menu',
       contact: 'Contact',
-      links: { about: 'Over ons', videos: "Video's", gallery: 'Galerij', shows: 'Shows', book: 'Boek ons' },
+      links: { about: 'Over ons', videos: "Video's", gallery: "Foto's", shows: 'Shows', book: 'Boek ons' },
       rights: '© 2026 Bambas Roda de Samba · Alle rechten voorbehouden',
     },
     ig: { follow: 'Volg ons op Instagram' },
   },
 
   pt: {
-    nav: { about: 'Sobre', videos: 'Vídeos', gallery: 'Galeria', shows: 'Shows' },
+    nav: { about: 'Sobre', videos: 'Vídeos', gallery: 'Fotos', shows: 'Shows' },
     hero: {
       h1: 'Bambas Roda de Samba — Banda de Samba Brasileira em Amsterdã',
       tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
@@ -175,7 +175,7 @@ const messages = {
     },
     video: { tag: 'Assista', heading: 'Ao vivo', posterAlt: 'Bambas ao vivo', birthdayCaption: 'Aniversário de 50 anos do Wagner Moura' },
     gallery: {
-      tag: 'Galeria',
+      tag: 'Fotos',
       heading: 'Momentos da roda',
     },
     shows: {
@@ -216,7 +216,7 @@ const messages = {
       tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
       menu: 'Menu',
       contact: 'Contato',
-      links: { about: 'Sobre', videos: 'Vídeos', gallery: 'Galeria', shows: 'Shows', book: 'Contrate-nos' },
+      links: { about: 'Sobre', videos: 'Vídeos', gallery: 'Fotos', shows: 'Shows', book: 'Contrate-nos' },
       rights: '© 2026 Bambas Roda de Samba · Todos os direitos reservados',
     },
     ig: { follow: 'Siga-nos no Instagram' },

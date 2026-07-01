@@ -60,7 +60,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="gallery">
+  <section id="photos">
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-tag">{{ t('gallery.tag') }}</div>
@@ -105,7 +105,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-#gallery { background: var(--paper); color: var(--ink); }
+#photos { background: var(--paper); color: var(--ink); }
 .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 16px; }
 .gallery-grid .g { border-radius: 14px; transition: .25s; cursor: pointer; overflow: hidden; position: relative; }
 .gallery-grid .g:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
@@ -125,7 +125,7 @@ onUnmounted(() => {
 .gallery-grid .g:hover .cap { padding-bottom: 16px; }
 
 @media (max-width: 900px) {
-  #gallery { padding-top: 48px; }
+  #photos { padding-top: 48px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; }
   .gallery-grid .g { aspect-ratio: 1; }
   .g.tall { grid-row: auto; }

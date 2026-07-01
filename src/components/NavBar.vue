@@ -11,7 +11,7 @@ const langOpen = ref(false)
 const links = [
   { href: '#about', key: 'about' },
   { href: '#video', key: 'videos' },
-  { href: '#gallery', key: 'gallery' },
+  { href: '#photos', key: 'gallery' },
   { href: '#shows', key: 'shows' },
 ]
 
