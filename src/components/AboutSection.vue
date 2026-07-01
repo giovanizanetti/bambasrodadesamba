@@ -16,7 +16,6 @@ const { t } = useI18n()
         <div class="about-text">
           <p class="lead">{{ t('about.lead') }}</p>
           <p v-for="(para, i) in t('about.paragraphs')" :key="i">{{ para }}</p>
-          <p>{{ t('about.different') }}</p>
           <blockquote class="creed">{{ t('about.creed') }}</blockquote>
         </div>
         <div class="about-photo"><img :src="guitarist" :alt="t('about.photoAlt')" /></div>
