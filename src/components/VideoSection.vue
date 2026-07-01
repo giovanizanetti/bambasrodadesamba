@@ -13,8 +13,8 @@ const videos = [
 
 const youtube = {
   id: 'KW4ScUJ9Wos',
-  caption: "King's Day Amsterdam 2026",
-  title: "Bambas Roda de Samba — King's Day Amsterdam 2026",
+  caption: "King's Day — Yusu Café party at Oosterpark, Amsterdam, 2026",
+  title: "Bambas Roda de Samba — King's Day party at Yusu Café, Oosterpark, Amsterdam, 2026",
   thumb: 'https://i.ytimg.com/vi/KW4ScUJ9Wos/maxresdefault.jpg',
 }
 const ytPlaying = ref(false)
