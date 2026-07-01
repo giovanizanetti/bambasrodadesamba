@@ -31,7 +31,14 @@ const { t } = useI18n();
             <span v-if="show.free" class="free-badge">{{ t('shows.freeEntry') }}</span>
           </div>
         </div>
-        <a v-if="!show.free" href="#book" class="btn btn-primary">{{
+        <a
+          v-if="show.ticketUrl"
+          :href="show.ticketUrl"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+        >{{ t("shows.tickets") }}</a>
+        <a v-else-if="!show.free" href="#book" class="btn btn-primary">{{
           t("shows.tickets")
         }}</a>
       </div>
