@@ -41,6 +41,7 @@ const messages = {
       location: 'Location',
       freeEntry: 'Free entry',
       items: [
+        { day: '25', month: 'Jul', title: 'Feijoada com Samba & Forró', info: '📍 Tante Toorop', time: '16:20–22:00', ticketUrl: 'https://shop.weeztix.com/603721f4-7588-11f1-8e27-d65b0659bc31', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Tante+Toorop' },
         { day: '26', month: 'Jul', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
         { day: '30', month: 'Aug', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
       ],
@@ -112,6 +113,7 @@ const messages = {
       freeEntry: 'Gratis toegang',
       placeholder: '[ Vervang dit door jullie aankomende shows. ]',
       items: [
+        { day: '25', month: 'Jul', title: 'Feijoada com Samba & Forró', info: '📍 Tante Toorop', time: '16:20–22:00', ticketUrl: 'https://shop.weeztix.com/603721f4-7588-11f1-8e27-d65b0659bc31', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Tante+Toorop' },
         { day: '26', month: 'Jul', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
         { day: '30', month: 'Aug', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
       ],
@@ -183,6 +185,7 @@ const messages = {
       freeEntry: 'Entrada gratuita',
       placeholder: '[ Substitua pelos seus próximos shows. ]',
       items: [
+        { day: '25', month: 'Jul', title: 'Feijoada com Samba & Forró', info: '📍 Tante Toorop', time: '16:20–22:00', ticketUrl: 'https://shop.weeztix.com/603721f4-7588-11f1-8e27-d65b0659bc31', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Tante+Toorop' },
         { day: '26', month: 'Jul', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
         { day: '30', month: 'Aug', title: 'Samba da Red Light', info: '📍 Café De Hartjes · Amsterdam', time: '16:00–18:30', free: true, mapsUrl: 'https://www.google.com/maps/place/Caf%C3%A9+De+Hartjes%F0%9F%8D%BA/@52.375895,4.9001353,17z/data=!3m1!4b1!4m6!3m5!1s0x47c609b9c8411a09:0xbc459a8f37c0d444!8m2!3d52.375895!4d4.9001353!16s%2Fg%2F1tjdqjn6?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D' },
       ],
