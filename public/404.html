@@ -15,6 +15,7 @@
         var section = path.split('/').pop();
         if (section === 'gallery') section = 'photos'; // backward-compat for the old /gallery link
         if (section === 'video') section = 'videos'; // backward-compat for the old /video link
+        if (section === 'tickets') section = 'shows'; // /tickets is an Instagram-friendly alias for #shows
         var sections = ['about', 'videos', 'photos', 'shows', 'book'];
         var hash = sections.indexOf(section) !== -1 ? '#' + section : '';
         window.location.replace('/' + window.location.search + hash);
