@@ -2,10 +2,7 @@ backend:
   name: github
   repo: giovanizanetti/bambasrodadesamba
   branch: main
-  # Required for login from the deployed site: deploy the tiny OAuth helper
-  # (https://github.com/sveltia/sveltia-cms-auth) to Cloudflare Workers and
-  # put its URL here, e.g.:
-  # base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  base_url: https://sveltia-cms-auth.zanetti-giovani.workers.dev
 
 media_folder: public/uploads
 public_folder: /uploads
