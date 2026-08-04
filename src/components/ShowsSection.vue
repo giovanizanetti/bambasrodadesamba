@@ -2,7 +2,12 @@
 import { computed } from "vue";
 import { useI18n } from "../i18n";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
+const showModules = import.meta.glob("../../content/shows/*.json", { eager: true });
+const allShows = Object.values(showModules).map((mod) => mod.default);
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const now = new Date();
 const todayIso = [
@@ -11,10 +16,20 @@ const todayIso = [
   String(now.getDate()).padStart(2, "0"),
 ].join("-");
 
+const localized = (show, field) => show[`${field}_${locale.value}`] || show[field];
+
 const upcomingShows = computed(() =>
-  t("shows.items")
-    .filter((show) => !show.date || show.date >= todayIso)
-    .sort((a, b) => (a.date || "").localeCompare(b.date || ""))
+  allShows
+    .filter((show) => show.date >= todayIso)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .map((show) => ({
+      ...show,
+      day: show.date.slice(8, 10),
+      month: MONTHS[Number(show.date.slice(5, 7)) - 1],
+      title: localized(show, "title"),
+      subtitle: localized(show, "subtitle"),
+      info: `📍 ${show.venue}`,
+    }))
 );
 </script>
 

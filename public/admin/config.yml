@@ -1,0 +1,95 @@
+backend:
+  name: github
+  repo: giovanizanetti/bambasrodadesamba
+  branch: main
+  # Required for login from the deployed site: deploy the tiny OAuth helper
+  # (https://github.com/sveltia/sveltia-cms-auth) to Cloudflare Workers and
+  # put its URL here, e.g.:
+  # base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: shows
+    label: Shows
+    label_singular: Show
+    folder: content/shows
+    format: json
+    extension: json
+    create: true
+    slug: '{{fields.date}}-{{slug}}'
+    identifier_field: title
+    summary: '{{fields.date}} — {{fields.title}}'
+    sortable_fields:
+      fields: [date, title]
+      default:
+        field: date
+        direction: descending
+    fields:
+      - name: date
+        label: Date
+        widget: string
+        pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use the format YYYY-MM-DD, e.g. 2026-08-16']
+        hint: 'YYYY-MM-DD. The show disappears from the site automatically the day after.'
+      - name: time
+        label: Time
+        widget: string
+        required: false
+        hint: 'e.g. 16:00–18:30 or just 19:00'
+      - name: title
+        label: Title
+        widget: string
+      - name: title_nl
+        label: Title (Nederlands)
+        widget: string
+        required: false
+        hint: 'Leave empty to use the main title'
+      - name: title_pt
+        label: Title (Português)
+        widget: string
+        required: false
+        hint: 'Leave empty to use the main title'
+      - name: subtitle
+        label: Subtitle
+        widget: string
+        required: false
+        hint: 'Small line under the title, e.g. what the show is part of'
+      - name: subtitle_nl
+        label: Subtitle (Nederlands)
+        widget: string
+        required: false
+      - name: subtitle_pt
+        label: Subtitle (Português)
+        widget: string
+        required: false
+      - name: venue
+        label: Venue
+        widget: string
+        hint: 'e.g. Café De Hartjes · Amsterdam (the 📍 pin is added automatically)'
+      - name: free
+        label: Free entry
+        widget: boolean
+        default: false
+        required: false
+      - name: cancelled
+        label: Cancelled
+        widget: boolean
+        default: false
+        required: false
+        hint: 'Shows the event struck through with a Cancelled badge'
+      - name: eventUrl
+        label: Event page URL
+        widget: string
+        required: false
+        hint: 'Makes the title a link, e.g. to the organizer''s page'
+      - name: ticketUrl
+        label: Ticket URL
+        widget: string
+        required: false
+        hint: 'Shows a Tickets / Free ticket button'
+      - name: mapsUrl
+        label: Google Maps URL
+        widget: string
+        required: false
+        hint: 'Makes the venue name a link to the map'
