@@ -83,11 +83,6 @@ const upcomingShows = computed(() =>
           rel="noopener"
           class="btn btn-primary"
         >{{ show.free ? t("shows.freeTicket") : t("shows.tickets") }}</a>
-        <a
-          v-else-if="!show.free && !show.cancelled"
-          href="#book"
-          class="btn btn-primary"
-        >{{ t("shows.tickets") }}</a>
       </div>
       <p v-if="!upcomingShows.length" class="no-shows">{{ t("shows.noShows") }}</p>
       <p class="shows-note">
