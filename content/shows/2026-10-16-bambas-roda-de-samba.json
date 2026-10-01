@@ -12,5 +12,6 @@
   "cancelled": false,
   "eventUrl": "",
   "ticketUrl": "https://shop.weeztix.com/603721f4-7588-11f1-8e27-d65b0659bc31",
-  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=CHEF+Surinameplein+33+1058+GM+Amsterdam"
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=CHEF+Surinameplein+33+1058+GM+Amsterdam",
+  "ticketEmbed": "<div class=\"ot-iframe\"\n    data-ot-url=\"https://shop.weeztix.com/603721f4-7588-11f1-8e27-d65b0659bc31\"\n    data-ot-guid=\"603721f4-7588-11f1-8e27-d65b0659bc31\"\n></div>\n\n<script src=\"https://v1.widget.shop.weeztix.com/injector.js\"></script>"
 }

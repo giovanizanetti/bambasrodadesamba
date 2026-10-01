@@ -45,6 +45,7 @@ const messages = {
       privateNote: "We also play private events — weddings, birthdays, parties — that aren't listed here.",
       privateNoteCta: 'Want samba at yours?',
       noShows: 'Only private events coming up — follow us on Instagram for public show announcements.',
+      backToShows: '← All shows',
     },
     book: {
       heading: 'Want samba<br>at your party?',
@@ -116,6 +117,7 @@ const messages = {
       privateNote: 'We spelen ook op privé-evenementen — bruiloften, verjaardagen, feesten — die hier niet vermeld staan.',
       privateNoteCta: 'Samba op jouw feest?',
       noShows: 'Alleen privé-evenementen op de agenda — volg ons op Instagram voor aankondigingen van openbare shows.',
+      backToShows: '← Alle shows',
     },
     book: {
       heading: 'Samba op<br>jouw feest?',
@@ -187,6 +189,7 @@ const messages = {
       privateNote: 'Também tocamos em eventos privados — casamentos, aniversários, festas — que não aparecem aqui.',
       privateNoteCta: 'Quer samba na sua festa?',
       noShows: 'Somente eventos privados por enquanto — siga a gente no Instagram para saber dos próximos shows públicos.',
+      backToShows: '← Todos os shows',
     },
     book: {
       heading: 'Quer samba<br>na sua festa?',

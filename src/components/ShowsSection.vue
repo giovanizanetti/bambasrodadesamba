@@ -1,11 +1,10 @@
 <script setup>
 import { computed } from "vue";
 import { useI18n } from "../i18n";
+import { allShows, weeztixGuid } from "../shows";
+import { ticketsHref } from "../router";
 
 const { t, locale } = useI18n();
-
-const showModules = import.meta.glob("../../content/shows/*.json", { eager: true });
-const allShows = Object.values(showModules).map((mod) => mod.default);
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -29,6 +28,8 @@ const upcomingShows = computed(() =>
       title: localized(show, "title"),
       subtitle: localized(show, "subtitle"),
       info: `📍 ${show.venue}`,
+      ticketLink: weeztixGuid(show) ? ticketsHref(show.slug) : show.ticketUrl,
+      ticketExternal: !weeztixGuid(show),
     }))
 );
 </script>
@@ -77,10 +78,10 @@ const upcomingShows = computed(() =>
           </div>
         </div>
         <a
-          v-if="show.ticketUrl && !show.cancelled"
-          :href="show.ticketUrl"
-          target="_blank"
-          rel="noopener"
+          v-if="show.ticketLink && !show.cancelled"
+          :href="show.ticketLink"
+          :target="show.ticketExternal ? '_blank' : null"
+          :rel="show.ticketExternal ? 'noopener' : null"
           class="btn btn-primary"
         >{{ show.free ? t("shows.freeTicket") : t("shows.tickets") }}</a>
       </div>

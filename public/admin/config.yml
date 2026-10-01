@@ -85,6 +85,11 @@ collections:
         widget: string
         required: false
         hint: 'Shows a Tickets / Free ticket button'
+      - name: ticketEmbed
+        label: Ticket shop embed (Weeztix)
+        widget: text
+        required: false
+        hint: 'Paste the Weeztix embed code here. The Tickets button then opens a ticket page on our own site instead of the Weeztix website.'
       - name: mapsUrl
         label: Google Maps URL
         widget: string
