@@ -1,32 +1,37 @@
 <script setup>
-import { computed, onMounted, nextTick } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useI18n } from "../i18n";
-import { allShows, weeztixGuid, weeztixShopUrl } from "../shows";
+import { allShows, weeztixGuid, weeztixShopUrl, loadWeeztixInjector } from "../shows";
 
 const props = defineProps({ slug: { type: String, required: true } });
 const { t, locale } = useI18n();
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const WEEZTIX_INJECTOR = "https://v1.widget.shop.weeztix.com/injector.js";
 
 const show = computed(() => allShows.find((s) => s.slug === props.slug));
 const guid = computed(() => show.value && weeztixGuid(show.value));
 const title = computed(() => show.value && (show.value[`title_${locale.value}`] || show.value.title));
 
-// The injector scans the page for .ot-iframe once when it runs, so it is
-// loaded fresh each time this page mounts.
-const loadWidget = () => {
-  document.querySelector(`script[src="${WEEZTIX_INJECTOR}"]`)?.remove();
-  const script = document.createElement("script");
-  script.src = WEEZTIX_INJECTOR;
-  document.body.appendChild(script);
-};
+const shopEl = ref(null);
 
 onMounted(async () => {
   window.scrollTo(0, 0);
   if (!guid.value) return;
-  await nextTick();
-  loadWidget();
+  const ShopInjector = await loadWeeztixInjector();
+  // The visitor may have left the page while the script was loading.
+  if (!shopEl.value) return;
+  new ShopInjector().init({
+    elem: shopEl.value,
+    guid: guid.value,
+    url: weeztixShopUrl(guid.value),
+    autoscroll: true,
+    scrollTop: 0,
+  });
+});
+
+// Weeztix keeps listening for scroll/resize on its iframe; stop that on leave.
+onBeforeUnmount(() => {
+  shopEl.value?.querySelector("iframe")?.iFrameResizer?.close();
 });
 </script>
 
@@ -49,7 +54,7 @@ onMounted(async () => {
         </div>
 
         <div class="shop">
-          <div class="ot-iframe" :data-ot-url="weeztixShopUrl(guid)" :data-ot-guid="guid"></div>
+          <div ref="shopEl" class="ot-iframe" data-ot-autoload="false"></div>
         </div>
       </template>
 

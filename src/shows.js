@@ -15,3 +15,21 @@ export const weeztixGuid = (show) =>
   show.ticketEmbed?.match(WEEZTIX_GUID_ATTR)?.[1] ?? show.ticketEmbed?.match(WEEZTIX_SHOP_URL)?.[1] ?? null
 
 export const weeztixShopUrl = (guid) => `https://shop.weeztix.com/${guid}`
+
+const WEEZTIX_INJECTOR = 'https://v1.widget.shop.weeztix.com/injector.js'
+let injectorLoading = null
+
+// The Weeztix script can only run once per page (it throws when run again),
+// so it is loaded a single time and each ticket page starts its own shop.
+export const loadWeeztixInjector = () =>
+  (injectorLoading ??= new Promise((resolve, reject) => {
+    const script = document.createElement('script')
+    script.src = WEEZTIX_INJECTOR
+    script.onload = () => resolve(window.OpenTicket.ShopInjector)
+    script.onerror = () => {
+      script.remove()
+      injectorLoading = null
+      reject(new Error('Weeztix shop script failed to load'))
+    }
+    document.body.appendChild(script)
+  }))
