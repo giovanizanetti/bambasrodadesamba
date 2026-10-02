@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useI18n } from "../i18n";
 import { allShows, withDate, todayIso, weeztixGuid, weeztixShopUrl, loadWeeztixInjector } from "../shows";
 import ShowRow from "./ShowRow.vue";
@@ -7,11 +7,12 @@ import ShowRow from "./ShowRow.vue";
 // The page of one show (/shows/<slug>/): its row from the shows list, and
 // below it the Weeztix ticket shop when the show sells tickets through it.
 const props = defineProps({ slug: { type: String, required: true } });
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const found = allShows.find((s) => s.slug === props.slug);
 const show = found && withDate(found);
 const past = show && show.date < todayIso;
+const title = computed(() => show && (show[`title_${locale.value}`] || show.title));
 const guid = show && !past && !show.cancelled && weeztixGuid(show);
 
 const shopEl = ref(null);
@@ -48,6 +49,8 @@ onBeforeUnmount(() => {
         <div v-if="guid" id="tickets" class="shop">
           <div ref="shopEl" class="ot-iframe" data-ot-autoload="false"></div>
         </div>
+
+        <img v-if="show.image" :src="show.image" :alt="title" class="poster" />
       </template>
 
       <p v-else class="note">{{ t("shows.notFound") }}</p>
@@ -74,6 +77,11 @@ onBeforeUnmount(() => {
 .note {
   margin-top: 10px;
   color: rgba(251, 247, 240, 0.6);
+}
+.poster {
+  width: min(100%, 520px);
+  margin: 26px auto 0;
+  border-radius: 16px;
 }
 .shop {
   margin-top: 26px;

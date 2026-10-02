@@ -1,5 +1,5 @@
 <script setup>
-import logo from "../assets/photos/logo_horizontal_white.png";
+import logo from "../assets/photos/logo_hero_circle.png";
 import { allShows, withDate } from "../shows";
 import ShowRow from "./ShowRow.vue";
 
@@ -39,7 +39,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header img { height: 110px; }
+header img { height: 190px; }
 header .sec-tag { font-size: 20px; margin: 0; }
 .row {
   margin: auto 0;

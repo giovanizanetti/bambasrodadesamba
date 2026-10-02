@@ -90,6 +90,11 @@ collections:
         widget: text
         required: false
         hint: 'Paste the Weeztix embed code here. The Tickets button then opens a ticket page on our own site instead of the Weeztix website.'
+      - name: image
+        label: Poster / flyer
+        widget: image
+        required: false
+        hint: 'Shown on the show''s own page, under the show details'
       - name: mapsUrl
         label: Google Maps URL
         widget: string
