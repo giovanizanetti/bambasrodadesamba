@@ -11,7 +11,7 @@ import WhatsappIcon from "./WhatsappIcon.vue";
 const props = defineProps({
   show: { type: Object, required: true },
   preview: { type: Boolean, default: false },
-  // On the show's own page: there the title links on to the organiser's page.
+  // On the show's own page the title is no longer a link.
   ownPage: { type: Boolean, default: false },
 });
 const { t, locale } = useI18n();
@@ -28,7 +28,7 @@ const show = computed(() => ({
   ticketLink: weeztixGuid(props.show) ? `${showHref(props.show.slug)}#tickets` : props.show.ticketUrl,
   ticketExternal: !weeztixGuid(props.show),
   // In a list the title opens the show's own page (poster, tickets).
-  titleLink: props.ownPage ? props.show.eventUrl : showHref(props.show.slug),
+  titleLink: props.ownPage ? null : showHref(props.show.slug),
 }));
 
 // e.g. "Bambas Roda de Samba · Fri 16 Oct, 20:30-00:00 · Chef, Amsterdam" + the show's page.
@@ -51,8 +51,6 @@ const shareHref = computed(() =>
         <a
           v-if="show.titleLink && !show.cancelled"
           :href="show.titleLink"
-          :target="ownPage ? '_blank' : null"
-          :rel="ownPage ? 'noopener' : null"
           class="show-title-link"
         >{{ show.title }}</a>
         <template v-else>{{ show.title }}</template>

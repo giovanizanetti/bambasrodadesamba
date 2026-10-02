@@ -45,6 +45,13 @@ onBeforeUnmount(() => {
       <template v-if="show">
         <ShowRow :show="show" own-page />
         <p v-if="past" class="note">{{ t("shows.past") }}</p>
+        <a
+          v-if="show.eventUrl && !show.cancelled"
+          :href="show.eventUrl"
+          target="_blank"
+          rel="noopener"
+          class="event-link"
+        >{{ t("shows.eventPage") }} ↗</a>
 
         <div v-if="guid" id="tickets" class="shop">
           <div ref="shopEl" class="ot-iframe" data-ot-autoload="false"></div>
@@ -74,6 +81,15 @@ onBeforeUnmount(() => {
   transition: 0.2s;
 }
 .back:hover { color: var(--orange); }
+.event-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: rgba(251, 247, 240, 0.6);
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.event-link:hover { color: var(--orange); }
 .note {
   margin-top: 10px;
   color: rgba(251, 247, 240, 0.6);
