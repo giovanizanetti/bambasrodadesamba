@@ -79,7 +79,7 @@ collections:
         label: Event page URL
         widget: string
         required: false
-        hint: 'Makes the title a link, e.g. to the organizer''s page'
+        hint: 'e.g. the organizer''s page. On the show''s own page, the title links to it.'
       - name: ticketUrl
         label: Ticket URL
         widget: string
