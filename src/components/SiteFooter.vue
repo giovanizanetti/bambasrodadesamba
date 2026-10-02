@@ -1,11 +1,18 @@
 <script setup>
 import logoFooter from '../assets/photos/logo_footer_darkbg.png'
 import { useI18n } from '../i18n'
+import { sectionHref } from '../router'
 
 const { t } = useI18n()
 
 const menuKeys = ['about', 'videos', 'gallery', 'shows', 'book']
-const menuHrefs = { about: '#about', videos: '#videos', gallery: '#photos', shows: '#shows', book: '#book' }
+const menuHrefs = {
+  about: sectionHref('#about'),
+  videos: sectionHref('#videos'),
+  gallery: sectionHref('#photos'),
+  shows: sectionHref('#shows'),
+  book: sectionHref('#book'),
+}
 
 const IG_HANDLE = '@bambasrodadesamba'
 const IG_URL = 'https://www.instagram.com/bambasrodadesamba/'

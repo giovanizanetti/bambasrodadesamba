@@ -1,14 +1,17 @@
-import { ref, computed } from 'vue'
+// The site is one page with section anchors (#about, #shows, ...), plus two
+// real paths so a shared link gets its own WhatsApp preview:
+//   /shows/          only the "Upcoming shows" section
+//   /shows/<slug>/   one show (and its ticket shop), slug = the show's file name
+const path = window.location.pathname.replace(/\/+$/, '')
 
-// Minimal hash router. Section anchors (#about, #shows, ...) stay as they are;
-// only hashes starting with "#/tickets/" open the tickets page.
-const TICKETS_PREFIX = '#/tickets/'
+export const showsOnly = path === '/shows'
+export const showSlug = path.startsWith('/shows/') ? decodeURIComponent(path.slice('/shows/'.length)) : null
 
-const hash = ref(window.location.hash)
-window.addEventListener('hashchange', () => { hash.value = window.location.hash })
+export const showHref = (slug) => `/shows/${encodeURIComponent(slug)}/`
 
-export const ticketSlug = computed(() =>
-  hash.value.startsWith(TICKETS_PREFIX) ? decodeURIComponent(hash.value.slice(TICKETS_PREFIX.length)) : null
-)
-
-export const ticketsHref = (slug) => `${TICKETS_PREFIX}${encodeURIComponent(slug)}`
+// Links to home-page sections. On /shows/ the shows section is right there;
+// on every other sub page they have to go back to the home page.
+export const sectionHref = (hash) => {
+  if (showsOnly && hash === '#shows') return hash
+  return showsOnly || showSlug ? `/${hash}` : hash
+}

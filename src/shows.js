@@ -6,6 +6,43 @@ export const allShows = Object.entries(showModules).map(([path, mod]) => ({
   slug: path.split('/').pop().replace(/\.json$/, ''),
 }))
 
+const now = new Date()
+export const todayIso = [
+  now.getFullYear(),
+  String(now.getMonth() + 1).padStart(2, '0'),
+  String(now.getDate()).padStart(2, '0'),
+].join('-')
+
+export const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+// A show with the day and month split out, as the show row displays them.
+export const withDate = (show) => ({
+  ...show,
+  day: show.date.slice(8, 10),
+  month: MONTHS[Number(show.date.slice(5, 7)) - 1],
+})
+
+// Shows from today on, soonest first.
+export const upcomingShows = allShows
+  .filter((show) => show.date >= todayIso)
+  .sort((a, b) => a.date.localeCompare(b.date))
+  .map(withDate)
+
+export const SITE_URL = 'https://www.bambasrodadesamba.com'
+export const SHOWS_PAGE_URL = `${SITE_URL}/shows/`
+
+// "Fri 16 Oct, 20:30-00:00" in the given language.
+export const showWhen = (show, locale) => {
+  const date = new Date(`${show.date}T12:00:00`).toLocaleDateString(locale, {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+  })
+  return show.time ? `${date}, ${show.time}` : date
+}
+
+export const whatsappShareHref = (text) => `https://wa.me/?text=${encodeURIComponent(text)}`
+
 const WEEZTIX_GUID_ATTR = /data-ot-guid="([0-9a-f-]{36})"/i
 const WEEZTIX_SHOP_URL = /https:\/\/shop\.weeztix\.com\/([0-9a-f-]{36})/i
 

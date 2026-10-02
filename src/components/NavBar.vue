@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import logoNavbar from '../assets/photos/logo_horizontal_navbar.png'
 import { useI18n } from '../i18n'
+import { sectionHref, showsOnly } from '../router'
 
 const { t, locale, setLocale, locales } = useI18n()
 
@@ -9,10 +10,10 @@ const menuOpen = ref(false)
 const langOpen = ref(false)
 
 const links = [
-  { href: '#about', key: 'about' },
-  { href: '#videos', key: 'videos' },
-  { href: '#photos', key: 'gallery' },
-  { href: '#shows', key: 'shows' },
+  { href: sectionHref('#about'), key: 'about' },
+  { href: sectionHref('#videos'), key: 'videos' },
+  { href: sectionHref('#photos'), key: 'gallery' },
+  { href: sectionHref('#shows'), key: 'shows' },
 ]
 
 const closeMenu = () => { menuOpen.value = false }
@@ -27,7 +28,7 @@ const currentFlag = () => locales.find(l => l.code === locale.value)?.flag ?? 'ð
 
 <template>
   <nav>
-    <a href="#" class="brand" @click="closeMenu"><img :src="logoNavbar" alt="Bambas Roda de Samba" /></a>
+    <a :href="showsOnly ? '/' : '#'" class="brand" @click="closeMenu"><img :src="logoNavbar" alt="Bambas Roda de Samba" /></a>
 
     <ul :class="{ open: menuOpen }">
       <li v-for="link in links" :key="link.href">

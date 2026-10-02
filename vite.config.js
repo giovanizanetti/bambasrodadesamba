@@ -24,6 +24,8 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     rollupOptions: {
+      // /shows/ is its own page so a shared link gets its own preview.
+      input: { main: 'index.html', shows: 'shows/index.html' },
       output: {
         manualChunks: undefined,
       },
