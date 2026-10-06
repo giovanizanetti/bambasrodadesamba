@@ -124,7 +124,8 @@ function showWhen(show) {
     day: 'numeric',
     month: 'short',
   })
-  return show.time ? `${date}, ${show.time}` : date
+  const time = [show.time, show.playTime ? `Bambas ${show.playTime}` : null].filter(Boolean).join(' · ')
+  return time ? `${date}, ${time}` : date
 }
 
 function escape(text) {
