@@ -31,14 +31,18 @@ export const upcomingShows = allShows
 export const SITE_URL = 'https://www.bambasrodadesamba.com'
 export const SHOWS_PAGE_URL = `${SITE_URL}/shows/`
 
-// "Fri 16 Oct, 20:30-00:00" in the given language.
+// "Fri 16 Oct, 20:30-00:00" in the given language. When the show has a
+// separate Bambas play time (festivals, multi-act nights), it's appended
+// so the shared text still carries it even though it has its own line on
+// the website.
 export const showWhen = (show, locale) => {
   const date = new Date(`${show.date}T12:00:00`).toLocaleDateString(locale, {
     weekday: 'short',
     day: 'numeric',
     month: 'short',
   })
-  return show.time ? `${date}, ${show.time}` : date
+  const time = [show.time, show.playTime ? `Bambas ${show.playTime}` : null].filter(Boolean).join(' · ')
+  return time ? `${date}, ${time}` : date
 }
 
 export const whatsappShareHref = (text) => `https://wa.me/?text=${encodeURIComponent(text)}`
