@@ -46,6 +46,9 @@ header .sec-tag { font-size: 20px; margin: 0; }
   zoom: 1.6;
 }
 .row :deep(.show-row) { margin-bottom: 0; }
+/* Enlarged, two buttons side by side leave too little room for the show's details. */
+.row :deep(.show-actions) { flex-direction: column; align-items: stretch; gap: 12px; }
+.row :deep(.show-actions .btn) { justify-content: center; }
 footer {
   font-size: 20px;
   font-weight: 600;

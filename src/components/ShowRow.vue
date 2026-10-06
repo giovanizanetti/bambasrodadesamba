@@ -66,7 +66,7 @@ const shareHref = computed(() =>
         >{{ show.info }}</a>
         <p v-else>{{ show.info }}</p>
         <span v-if="show.time" class="show-time">{{ show.time }}</span>
-        <span v-if="show.playTime" class="show-play-time">{{ t('shows.playsAt') }} {{ show.playTime }}</span>
+        <span v-if="show.playTime" class="show-play-time">{{ t('shows.playsAt') }} <span class="nowrap">{{ show.playTime }}</span></span>
         <span v-if="show.cancelled" class="cancelled-badge">{{ t('shows.cancelled') }}</span>
         <span v-else-if="show.free" class="free-badge">{{ t('shows.freeEntry') }}</span>
       </div>
@@ -88,6 +88,11 @@ const shareHref = computed(() =>
         :rel="show.ticketExternal ? 'noopener' : null"
         class="btn btn-primary"
       >{{ show.free ? t("shows.freeTicket") : t("shows.tickets") }}</a>
+      <a
+        v-if="show.titleLink && !show.cancelled"
+        :href="show.titleLink"
+        class="btn btn-ghost"
+      >{{ t("shows.moreInfo") }}</a>
     </div>
   </div>
 </template>
@@ -177,6 +182,7 @@ const shareHref = computed(() =>
 .show-play-time {
   font-size: 13px; font-weight: 700; color: var(--orange);
 }
+.nowrap { white-space: nowrap; }
 .free-badge {
   font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
   color: var(--orange); border: 1px solid var(--orange); border-radius: 20px;
@@ -204,6 +210,8 @@ const shareHref = computed(() =>
   align-items: center;
   gap: 14px;
 }
+/* Same height as the outlined More info button next to it. */
+.show-actions .btn-primary { border: 2px solid transparent; }
 .share-icon {
   display: inline-flex;
   align-items: center;
@@ -237,7 +245,9 @@ const shareHref = computed(() =>
     grid-column: 1 / -1;
   }
   .show-actions:not(:has(.btn)) { display: contents; }
-  .show-row .btn { flex: 1; }
+  .show-actions { flex-wrap: wrap; }
+  /* Equal widths side by side; each drops to its own line when it can't fit its label. */
+  .show-row .btn { flex: 1 1 0; min-width: max-content; justify-content: center; }
   .share-icon {
     position: absolute;
     top: 16px;
@@ -254,6 +264,7 @@ const shareHref = computed(() =>
   .show-date .d {
     font-size: 31px;
   }
+  .show-row .btn { padding: 14px 20px; }
   .show-info h3 {
     font-size: 19px;
   }
