@@ -66,6 +66,7 @@ const shareHref = computed(() =>
         >{{ show.info }}</a>
         <p v-else>{{ show.info }}</p>
         <span v-if="show.time" class="show-time">{{ show.time }}</span>
+        <span v-if="show.playTime" class="show-play-time">{{ t('shows.playsAt') }} {{ show.playTime }}</span>
         <span v-if="show.cancelled" class="cancelled-badge">{{ t('shows.cancelled') }}</span>
         <span v-else-if="show.free" class="free-badge">{{ t('shows.freeEntry') }}</span>
       </div>
@@ -104,6 +105,8 @@ const shareHref = computed(() =>
   margin-bottom: 14px;
   transition: 0.2s;
   background: rgba(255, 255, 255, 0.02);
+  max-width: 100%;
+  overflow: hidden;
 }
 .show-row:hover {
   border-color: var(--orange);
@@ -124,6 +127,9 @@ const shareHref = computed(() =>
   letter-spacing: 0.12em;
   font-weight: 700;
   color: rgba(251, 247, 240, 0.7);
+}
+.show-info {
+  min-width: 0;
 }
 .show-info h3 {
   font-size: 21px;
@@ -166,7 +172,10 @@ const shareHref = computed(() =>
 }
 .show-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .show-time {
-  font-size: 13px; font-weight: 600; color: rgba(251,247,240,.5); white-space: nowrap;
+  font-size: 13px; font-weight: 600; color: rgba(251,247,240,.5);
+}
+.show-play-time {
+  font-size: 13px; font-weight: 700; color: var(--orange);
 }
 .free-badge {
   font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
