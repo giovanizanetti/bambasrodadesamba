@@ -33,7 +33,12 @@ collections:
         label: Time
         widget: string
         required: false
-        hint: 'e.g. 16:00–18:30 or just 19:00'
+        hint: 'e.g. 16:00–18:30 or just 19:00. For a festival or multi-act night, use this for the overall event time and use "What time we play" below for our own slot.'
+      - name: playTime
+        label: What time we play
+        widget: string
+        required: false
+        hint: 'Only for festivals or events with other acts/attractions — when do WE perform? e.g. 16:00–17:00. Leave empty if the Time above already refers only to us.'
       - name: title
         label: Title
         widget: string
