@@ -27,8 +27,8 @@ const show = computed(() => ({
   info: `📍 ${props.show.venue}`,
   ticketLink: weeztixGuid(props.show) ? `${showHref(props.show.slug)}#tickets` : props.show.ticketUrl,
   ticketExternal: !weeztixGuid(props.show),
-  // In a list the title opens the show's own page (poster, tickets).
-  titleLink: props.ownPage ? null : showHref(props.show.slug),
+  // In a list, More info opens the show's own page (poster, tickets).
+  pageLink: props.ownPage ? null : showHref(props.show.slug),
 }));
 
 // e.g. "Bambas Roda de Samba · Fri 16 Oct, 20:30-00:00 · Chef, Amsterdam" + the show's page.
@@ -47,14 +47,7 @@ const shareHref = computed(() =>
       <div class="m">{{ show.month }}</div>
     </div>
     <div class="show-info">
-      <h3>
-        <a
-          v-if="show.titleLink && !show.cancelled"
-          :href="show.titleLink"
-          class="show-title-link"
-        >{{ show.title }}</a>
-        <template v-else>{{ show.title }}</template>
-      </h3>
+      <h3>{{ show.title }}</h3>
       <p v-if="show.subtitle" class="show-subtitle">{{ show.subtitle }}</p>
       <div class="show-meta">
         <a
@@ -89,8 +82,8 @@ const shareHref = computed(() =>
         class="btn btn-primary"
       >{{ show.free ? t("shows.freeTicket") : t("shows.tickets") }}</a>
       <a
-        v-if="show.titleLink && !show.cancelled"
-        :href="show.titleLink"
+        v-if="show.pageLink && !show.cancelled"
+        :href="show.pageLink"
         class="btn btn-ghost"
       >{{ t("shows.moreInfo") }}</a>
     </div>
@@ -150,16 +143,6 @@ const shareHref = computed(() =>
 .show-info p {
   color: rgba(251, 247, 240, 0.6);
   font-size: 15px;
-}
-.show-title-link {
-  color: inherit;
-  text-decoration: none;
-  transition: 0.2s;
-}
-.show-title-link:hover {
-  color: var(--orange);
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 .show-location {
   color: rgba(251, 247, 240, 0.6);
