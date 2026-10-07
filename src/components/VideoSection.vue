@@ -7,11 +7,11 @@ import { useI18n } from '../i18n'
 const { t } = useI18n()
 
 const videos = [
-  { src: '/video/institucional.mp4', poster, captionKey: '', featured: false },
-  { src: '/video/wagner-moura-birthday.mp4', poster: birthdayPoster, captionKey: 'video.birthdayCaption', featured: true },
-  { src: '/video/roda-circle.mp4', poster: '/video/roda-circle-poster.jpg', captionKey: 'video.toekomstmuziekCaption' },
-  { src: '/video/roda-singer.mp4', poster: '/video/roda-singer-poster.jpg', captionKey: 'video.toekomstmuziekCaption' },
-  { src: '/video/roda-crowd.mp4', poster: '/video/roda-crowd-poster.jpg', captionKey: 'video.toekomstmuziekCaption', landscape: true },
+  { src: '/video/brazilian-elections-party-2026.mp4', poster: '/video/brazilian-elections-party-2026-poster.jpg', captionKey: 'video.electionsCaption' },
+  { src: '/video/wagner-moura-birthday.mp4', poster: birthdayPoster, captionKey: 'video.birthdayCaption' },
+  { src: '/video/institucional.mp4', poster, captionKey: '' },
+  { src: '/video/toekomstmuziek-amsterdam.mp4', poster: '/video/toekomstmuziek-amsterdam-poster.jpg', captionKey: 'video.toekomstmuziekCaption' },
+  { src: '/video/live-samba-crowd.mp4', poster: '/video/live-samba-crowd-poster.jpg', captionKey: '', landscape: true },
 ]
 
 const youtube = {
@@ -70,9 +70,9 @@ const start = (i) => {
         <figcaption class="video-caption">{{ youtube.caption }}</figcaption>
       </figure>
       <div class="video-stage">
-        <figure v-for="(vid, i) in videos" :key="i" class="video-item" :class="{ featured: vid.featured, landscape: vid.landscape }">
+        <figure v-for="(vid, i) in videos" :key="i" class="video-item" :class="{ landscape: vid.landscape }">
           <div class="video-player" :class="{ playing: playing[i] }" @click="start(i)">
-            <img class="poster" :src="vid.poster" :alt="t('video.posterAlt')" />
+            <img class="poster" :src="vid.poster" :alt="vid.captionKey ? `Bambas Roda de Samba — ${t(vid.captionKey)}` : t('video.posterAlt')" />
             <video
               :ref="el => setVideoRef(el, i)"
               preload="none"
@@ -131,8 +131,4 @@ const start = (i) => {
 }
 .video-player.playing .play, .video-player.playing .poster { opacity: 0; pointer-events: none; }
 
-/* On stacked (mobile) layout, show the Wagner Moura birthday video first */
-@media (max-width: 835px) {
-  .video-item.featured { order: -1; }
-}
 </style>

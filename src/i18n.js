@@ -29,7 +29,7 @@ const messages = {
       ],
       creed: 'We play with our hearts. What we play has to mean something to us.',
     },
-    video: { tag: 'Watch', heading: 'Live performance', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50th birthday", toekomstmuziekCaption: 'Toekomstmuziek, Amsterdam' },
+    video: { tag: 'Watch', heading: 'Live performance', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50th birthday", toekomstmuziekCaption: 'Toekomstmuziek, Amsterdam', electionsCaption: 'Brazilian elections party 2026' },
     gallery: {
       tag: 'Photos',
       heading: 'Moments from the roda',
@@ -108,7 +108,7 @@ const messages = {
       ],
       creed: 'Wij spelen met ons hart. Wat we spelen moet iets voor ons betekenen.',
     },
-    video: { tag: 'Kijken', heading: 'Live optreden', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50e verjaardag", toekomstmuziekCaption: 'Toekomstmuziek, Amsterdam' },
+    video: { tag: 'Kijken', heading: 'Live optreden', posterAlt: 'Bambas live', birthdayCaption: "Wagner Moura's 50e verjaardag", toekomstmuziekCaption: 'Toekomstmuziek, Amsterdam', electionsCaption: 'Braziliaans verkiezingsfeest 2026' },
     gallery: {
       tag: "Foto's",
       heading: 'Momenten uit de roda',
@@ -187,7 +187,7 @@ const messages = {
       ],
       creed: 'Tocamos com o coração. O que tocamos precisa significar algo para nós.',
     },
-    video: { tag: 'Assista', heading: 'Ao vivo', posterAlt: 'Bambas ao vivo', birthdayCaption: 'Aniversário de 50 anos do Wagner Moura', toekomstmuziekCaption: 'Toekomstmuziek, Amsterdã' },
+    video: { tag: 'Assista', heading: 'Ao vivo', posterAlt: 'Bambas ao vivo', birthdayCaption: 'Aniversário de 50 anos do Wagner Moura', toekomstmuziekCaption: 'Toekomstmuziek, Amsterdã', electionsCaption: 'Festa das eleições brasileiras 2026' },
     gallery: {
       tag: 'Fotos',
       heading: 'Momentos da roda',
