@@ -10,23 +10,24 @@ import singer from '../assets/photos/singer-cavaquinho.jpg'
 import liveBar2 from '../assets/photos/live-bar-2.jpg'
 import band from '../assets/photos/band.jpg'
 import percusionist from '../assets/photos/percusionist.JPG'
-import rodaNight from '../assets/photos/roda-night.jpg'
+import crowdAmsterdam from '../assets/photos/roda-de-samba-crowd-amsterdam.jpg'
 import { useI18n } from '../i18n'
 
 const { t } = useI18n()
 
 const tiles = [
   { src: wagnerMoura1, cls: 'wide tall', caption: 'Wagner Moura', altCtx: 'with Bambas Roda de Samba' },
+  // Portrait photo in a landscape tile: keep the band in the middle of the crowd in view.
+  { src: crowdAmsterdam, cls: 'wide tall', caption: '', altCtx: 'live roda de samba surrounded by a packed crowd', pos: 'center 62%' },
   { src: wagnerMoura2, cls: 'wide tall', caption: 'Julia Bernat', altCtx: 'with Bambas Roda de Samba' },
   { src: overhead1, cls: 'wide', caption: 'Roda de Samba', altCtx: 'live performance' },
   { src: pandeiro, cls: '', caption: 'Nagô', altCtx: 'playing pandeiro' },
   { src: guitarist, cls: 'tall', caption: 'Henk Oito Cordas', altCtx: 'playing guitar' },
-  { src: rodaNight, cls: 'tall', caption: 'Toekomstmuziek', altCtx: 'with the crowd around the roda' },
-  { src: singer, cls: 'wide', caption: 'Giovani Zanetti', altCtx: 'singing and playing cavaquinho' },
+  { src: singer, cls: '', caption: 'Giovani Zanetti', altCtx: 'singing and playing cavaquinho' },
   { src: band, cls: 'wide', caption: '', altCtx: 'samba band' },
   { src: percusionist, cls: '', caption: 'Alex Leleo', altCtx: 'on percussion' },
   { src: liveBar2, cls: 'wide', caption: '', altCtx: 'live in the bar' },
-  { src: overhead3, cls: 'wide', caption: '', altCtx: 'live samba' },
+  { src: overhead3, cls: '', caption: '', altCtx: 'live samba' },
 ]
 
 const altOf = (tile) =>
@@ -81,7 +82,7 @@ onUnmounted(() => {
           @keydown.enter="open(i)"
           @keydown.space.prevent="open(i)"
         >
-          <img :src="tile.src" :alt="altOf(tile)" loading="lazy" />
+          <img :src="tile.src" :alt="altOf(tile)" :style="tile.pos && { objectPosition: tile.pos }" loading="lazy" />
           <figcaption v-if="tile.caption" class="cap">{{ tile.caption }}</figcaption>
         </figure>
       </div>
