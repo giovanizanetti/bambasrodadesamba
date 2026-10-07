@@ -17,6 +17,7 @@ const menuHrefs = {
 const IG_HANDLE = '@bambasrodadesamba'
 const IG_URL = 'https://www.instagram.com/bambasrodadesamba/'
 const EMAIL = 'info@bambasrodadesamba.com'
+const PRESS_KIT = '/press-kit.pdf'
 </script>
 
 <template>
@@ -51,6 +52,16 @@ const EMAIL = 'info@bambasrodadesamba.com'
               </svg>
             </span>
             {{ EMAIL }}
+          </a>
+          <a class="foot-contact" :href="PRESS_KIT" download="Bambas-Roda-de-Samba-Press-Kit.pdf">
+            <span class="foot-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+                <path d="M14 3v5h5" />
+                <path d="M12 11v6m-3-3 3 3 3-3" />
+              </svg>
+            </span>
+            {{ t('footer.pressKit') }}
           </a>
         </div>
       </div>
