@@ -10,6 +10,7 @@ import singer from '../assets/photos/singer-cavaquinho.jpg'
 import liveBar2 from '../assets/photos/live-bar-2.jpg'
 import band from '../assets/photos/band.jpg'
 import percusionist from '../assets/photos/percusionist.JPG'
+import rodaNight from '../assets/photos/roda-night.jpg'
 import { useI18n } from '../i18n'
 
 const { t } = useI18n()
@@ -20,11 +21,12 @@ const tiles = [
   { src: overhead1, cls: 'wide', caption: 'Roda de Samba', altCtx: 'live performance' },
   { src: pandeiro, cls: '', caption: 'Nagô', altCtx: 'playing pandeiro' },
   { src: guitarist, cls: 'tall', caption: 'Henk Oito Cordas', altCtx: 'playing guitar' },
-  { src: singer, cls: '', caption: 'Giovani Zanetti', altCtx: 'singing and playing cavaquinho' },
+  { src: rodaNight, cls: 'tall', caption: 'Toekomstmuziek', altCtx: 'with the crowd around the roda' },
+  { src: singer, cls: 'wide', caption: 'Giovani Zanetti', altCtx: 'singing and playing cavaquinho' },
   { src: band, cls: 'wide', caption: '', altCtx: 'samba band' },
   { src: percusionist, cls: '', caption: 'Alex Leleo', altCtx: 'on percussion' },
   { src: liveBar2, cls: 'wide', caption: '', altCtx: 'live in the bar' },
-  { src: overhead3, cls: '', caption: '', altCtx: 'live samba' },
+  { src: overhead3, cls: 'wide', caption: '', altCtx: 'live samba' },
 ]
 
 const altOf = (tile) =>
@@ -130,6 +132,8 @@ onUnmounted(() => {
   .gallery-grid .g { aspect-ratio: 1; }
   .g.tall { grid-row: auto; }
   .g.wide { grid-column: auto; }
+  /* An odd photo out at the end fills the whole row instead of sitting alone. */
+  .gallery-grid .g:last-child:nth-child(odd) { grid-column: span 2; aspect-ratio: 2; }
 }
 
 /* Lightbox */

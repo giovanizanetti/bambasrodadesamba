@@ -9,6 +9,9 @@ const { t } = useI18n()
 const videos = [
   { src: '/video/institucional.mp4', poster, captionKey: '', featured: false },
   { src: '/video/wagner-moura-birthday.mp4', poster: birthdayPoster, captionKey: 'video.birthdayCaption', featured: true },
+  { src: '/video/roda-circle.mp4', poster: '/video/roda-circle-poster.jpg', captionKey: 'video.toekomstmuziekCaption' },
+  { src: '/video/roda-singer.mp4', poster: '/video/roda-singer-poster.jpg', captionKey: 'video.toekomstmuziekCaption' },
+  { src: '/video/roda-crowd.mp4', poster: '/video/roda-crowd-poster.jpg', captionKey: 'video.toekomstmuziekCaption', landscape: true },
 ]
 
 const youtube = {
@@ -67,7 +70,7 @@ const start = (i) => {
         <figcaption class="video-caption">{{ youtube.caption }}</figcaption>
       </figure>
       <div class="video-stage">
-        <figure v-for="(vid, i) in videos" :key="i" class="video-item" :class="{ featured: vid.featured }">
+        <figure v-for="(vid, i) in videos" :key="i" class="video-item" :class="{ featured: vid.featured, landscape: vid.landscape }">
           <div class="video-player" :class="{ playing: playing[i] }" @click="start(i)">
             <img class="poster" :src="vid.poster" :alt="t('video.posterAlt')" />
             <video
@@ -110,6 +113,9 @@ const start = (i) => {
   overflow: hidden; background: #000; box-shadow: 0 24px 70px rgba(0,0,0,.6);
   border: 1px solid rgba(253,118,3,.25); cursor: pointer;
 }
+/* A landscape clip gets its own row, as wide as the YouTube player above. */
+.video-item.landscape { flex-basis: 100%; }
+.video-item.landscape .video-player { width: min(860px, 92vw); aspect-ratio: 16/9; }
 .video-player video, .video-player .poster { width: 100%; height: 100%; object-fit: cover; display: block; }
 .video-player .poster { position: absolute; inset: 0; transition: .3s; }
 .video-player .play, .yt-frame .play {
