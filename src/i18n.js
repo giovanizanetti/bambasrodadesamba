@@ -75,6 +75,7 @@ const messages = {
       errPhone: 'Please enter a valid phone number',
       errorBefore: 'Something went wrong. Please try again, or reach us on',
       errorMid: 'or at',
+      pressKit: 'Download our press kit (PDF)',
     },
     footer: {
       tagline: '🇧🇷 Bringing the joy of Brazilian samba to events across the Netherlands 🇳🇱',
@@ -82,6 +83,7 @@ const messages = {
       contact: 'Contact',
       links: { about: 'About', videos: 'Videos', gallery: 'Photos', shows: 'Shows', book: 'Book us' },
       rights: '© 2026 Bambas Roda de Samba · All rights reserved',
+      pressKit: 'Press kit (PDF)',
     },
     ig: { follow: 'Follow us on Instagram' },
   },
@@ -154,6 +156,7 @@ const messages = {
       errPhone: 'Voer een geldig telefoonnummer in',
       errorBefore: 'Er ging iets mis. Probeer het opnieuw, of bereik ons via',
       errorMid: 'of op',
+      pressKit: 'Download onze perskit (PDF)',
     },
     footer: {
       tagline: '🇧🇷 De vreugde van Braziliaanse samba naar evenementen door heel Nederland 🇳🇱',
@@ -161,6 +164,7 @@ const messages = {
       contact: 'Contact',
       links: { about: 'Over ons', videos: "Video's", gallery: "Foto's", shows: 'Shows', book: 'Boek ons' },
       rights: '© 2026 Bambas Roda de Samba · Alle rechten voorbehouden',
+      pressKit: 'Perskit (PDF)',
     },
     ig: { follow: 'Volg ons op Instagram' },
   },
@@ -233,6 +237,7 @@ const messages = {
       errPhone: 'Por favor, insira um número de telefone válido',
       errorBefore: 'Algo deu errado. Tente novamente ou fale conosco no',
       errorMid: 'ou em',
+      pressKit: 'Baixe nosso press kit (PDF)',
     },
     footer: {
       tagline: '🇧🇷 Levando a alegria do samba brasileiro para eventos por toda a Holanda 🇳🇱',
@@ -240,6 +245,7 @@ const messages = {
       contact: 'Contato',
       links: { about: 'Sobre', videos: 'Vídeos', gallery: 'Fotos', shows: 'Shows', book: 'Contrate-nos' },
       rights: '© 2026 Bambas Roda de Samba · Todos os direitos reservados',
+      pressKit: 'Press kit (PDF)',
     },
     ig: { follow: 'Siga-nos no Instagram' },
   },
