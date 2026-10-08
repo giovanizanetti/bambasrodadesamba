@@ -72,10 +72,6 @@ const onSubmit = async () => {
         <div>
           <h2 v-html="t('book.heading')"></h2>
           <p>{{ t('book.text') }}</p>
-          <a class="press-kit" href="/press-kit.pdf" download="Bambas-Roda-de-Samba-Press-Kit.pdf">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-5-5 5 5 5-5M5 20h14" /></svg>
-            {{ t('book.pressKit') }}
-          </a>
         </div>
         <form class="book-form" novalidate @submit.prevent="onSubmit">
           <div class="field" :class="{ invalid: errors.name }">
@@ -126,12 +122,6 @@ const onSubmit = async () => {
 .book-grid h2 { font-size: clamp(38px, 5vw, 66px); line-height: .95; text-transform: uppercase; color: #0E0E0E; }
 .book-grid p { font-size: 19px; line-height: 1.6; margin: 22px 0 30px; font-weight: 500; max-width: 460px; }
 .book-form { background: #0E0E0E; color: var(--cream); padding: 40px; border-radius: 22px; }
-.press-kit {
-  display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border: 2px solid #0E0E0E; border-radius: 50px;
-  font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; color: #0E0E0E; transition: .2s;
-}
-.press-kit svg { width: 18px; height: 18px; }
-.press-kit:hover { background: #0E0E0E; color: var(--orange); }
 .book-form .field { margin-bottom: 18px; }
 .book-form label { display: block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; color: var(--orange-bright); }
 .book-form input, .book-form textarea {
