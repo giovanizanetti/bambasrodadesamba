@@ -1,7 +1,7 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useI18n } from "../i18n";
-import { upcomingShows, SHOWS_PAGE_URL, whatsappShareHref } from "../shows";
+import { upcomingShows, pastShows, SHOWS_PAGE_URL, whatsappShareHref } from "../shows";
 import { sectionHref } from "../router";
 import ShowRow from "./ShowRow.vue";
 import WhatsappIcon from "./WhatsappIcon.vue";
@@ -9,6 +9,8 @@ import WhatsappIcon from "./WhatsappIcon.vue";
 const { t } = useI18n();
 
 const shareHref = computed(() => whatsappShareHref(`${t("shows.shareText")}\n${SHOWS_PAGE_URL}`));
+
+const showPast = ref(false);
 </script>
 
 <template>
@@ -28,6 +30,18 @@ const shareHref = computed(() => whatsappShareHref(`${t("shows.shareText")}\n${S
         {{ t("shows.privateNote") }}
         <a :href="sectionHref('#book')">{{ t("shows.privateNoteCta") }}</a>
       </p>
+      <template v-if="pastShows.length">
+        <button
+          type="button"
+          class="past-toggle"
+          :aria-expanded="showPast"
+          aria-controls="past-shows"
+          @click="showPast = !showPast"
+        >{{ showPast ? t("shows.hidePast") : t("shows.seePast") }}</button>
+        <div v-show="showPast" id="past-shows" class="past-shows">
+          <ShowRow v-for="show in pastShows" :key="show.slug" :show="show" past />
+        </div>
+      </template>
     </div>
   </section>
 </template>
@@ -79,5 +93,28 @@ const shareHref = computed(() => whatsappShareHref(`${t("shows.shareText")}\n${S
 .shows-note a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+.past-toggle {
+  display: block;
+  margin: 36px auto 0;
+  padding: 6px 4px;
+  background: none;
+  border: none;
+  color: var(--orange);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.past-toggle:hover,
+.past-toggle:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.past-shows {
+  margin-top: 20px;
 }
 </style>

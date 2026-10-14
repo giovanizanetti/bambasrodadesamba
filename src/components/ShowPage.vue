@@ -43,7 +43,7 @@ onBeforeUnmount(() => {
       <a href="/shows/" class="back">{{ t("shows.backToShows") }}</a>
 
       <template v-if="show">
-        <ShowRow :show="show" own-page />
+        <ShowRow :show="show" own-page :past="past" />
         <p v-if="past" class="note">{{ t("shows.past") }}</p>
         <a
           v-if="show.eventUrl && !show.cancelled"
