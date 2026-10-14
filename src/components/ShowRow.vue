@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useI18n } from "../i18n";
-import { weeztixGuid, showWhen, whatsappShareHref, SITE_URL } from "../shows";
+import { weeztixGuid, showWhen, timeRange, venueLabel, whatsappShareHref, SITE_URL } from "../shows";
 import { showHref } from "../router";
 import WhatsappIcon from "./WhatsappIcon.vue";
 
@@ -13,6 +13,8 @@ const props = defineProps({
   preview: { type: Boolean, default: false },
   // On the show's own page the title is no longer a link.
   ownPage: { type: Boolean, default: false },
+  // Under "Past shows": no tickets or sharing, the date shows its year.
+  past: { type: Boolean, default: false },
 });
 const { t, locale } = useI18n();
 
@@ -24,27 +26,30 @@ const show = computed(() => ({
   ...props.show,
   title: localized("title"),
   subtitle: localized("subtitle"),
-  info: `📍 ${props.show.venue}`,
+  info: `📍 ${venueLabel(props.show)}`,
+  time: timeRange(props.show.startTime, props.show.endTime),
+  playTime: timeRange(props.show.playStart, props.show.playEnd),
   ticketLink: weeztixGuid(props.show) ? `${showHref(props.show.slug)}#tickets` : props.show.ticketUrl,
   ticketExternal: !weeztixGuid(props.show),
   // In a list, More info opens the show's own page (poster, tickets).
   pageLink: props.ownPage ? null : showHref(props.show.slug),
 }));
 
-// e.g. "Bambas Roda de Samba · Fri 16 Oct, 20:30-00:00 · Chef, Amsterdam" + the show's page.
+// e.g. "Bambas Roda de Samba · Fri 16 Oct, 20:30–00:00 · Chef · Amsterdam" + the show's page.
 const shareHref = computed(() =>
   whatsappShareHref(
-    `${show.value.title} · ${showWhen(props.show, DATE_LOCALES[locale.value])} · ${props.show.venue}\n` +
+    `${show.value.title} · ${showWhen(props.show, DATE_LOCALES[locale.value])} · ${venueLabel(props.show)}\n` +
       `${SITE_URL}${showHref(props.show.slug)}`
   )
 );
 </script>
 
 <template>
-  <div class="show-row" :class="{ cancelled: show.cancelled }">
+  <div class="show-row" :class="{ cancelled: show.cancelled, past }">
     <div class="show-date">
       <div class="d">{{ show.day }}</div>
       <div class="m">{{ show.month }}</div>
+      <div v-if="past" class="y">{{ show.date.slice(0, 4) }}</div>
     </div>
     <div class="show-info">
       <h3>{{ show.title }}</h3>
@@ -66,7 +71,7 @@ const shareHref = computed(() =>
     </div>
     <div class="show-actions">
       <a
-        v-if="!preview && !show.cancelled"
+        v-if="!preview && !past && !show.cancelled"
         :href="shareHref"
         target="_blank"
         rel="noopener"
@@ -75,17 +80,21 @@ const shareHref = computed(() =>
         :title="t('shows.share')"
       ><WhatsappIcon /></a>
       <a
-        v-if="show.ticketLink && !show.cancelled"
+        v-if="show.ticketLink && !past && !show.cancelled"
         :href="show.ticketLink"
         :target="show.ticketExternal ? '_blank' : null"
         :rel="show.ticketExternal ? 'noopener' : null"
         class="btn btn-primary"
       >{{ show.free ? t("shows.freeTicket") : t("shows.tickets") }}</a>
       <a
-        v-if="show.pageLink && !show.cancelled"
+        v-if="show.pageLink && !show.cancelled && !show.comingSoon"
         :href="show.pageLink"
         class="btn btn-ghost"
       >{{ t("shows.moreInfo") }}</a>
+      <span
+        v-else-if="show.pageLink && !show.cancelled && !past"
+        class="btn btn-soon"
+      >{{ t("shows.moreInfoSoon") }}</span>
     </div>
   </div>
 </template>
@@ -187,6 +196,20 @@ const shareHref = computed(() =>
   text-decoration-color: #e05252;
 }
 .show-row.cancelled .show-date .d { color: rgba(251, 247, 240, 0.5); }
+.show-row.past { opacity: 0.6; }
+.show-row.past:hover { opacity: 1; }
+.show-row.past .show-date .d { color: rgba(251, 247, 240, 0.7); }
+.show-date .y {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: rgba(251, 247, 240, 0.45);
+}
+.btn-soon {
+  border: 2px dashed rgba(251, 247, 240, 0.25);
+  color: rgba(251, 247, 240, 0.55);
+  cursor: default;
+}
 
 .show-actions {
   display: flex;

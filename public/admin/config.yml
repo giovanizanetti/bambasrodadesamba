@@ -26,19 +26,36 @@ collections:
     fields:
       - name: date
         label: Date
-        widget: string
-        pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use the format YYYY-MM-DD, e.g. 2026-08-16']
-        hint: 'YYYY-MM-DD. The show disappears from the site automatically the day after.'
-      - name: time
-        label: Time
-        widget: string
+        widget: datetime
+        type: date
+        hint: 'The day after the show, it moves from Upcoming shows to Past shows.'
+      - name: startTime
+        label: Start time
+        widget: datetime
+        type: time
+        format: 'HH:mm'
         required: false
-        hint: 'e.g. 16:00–18:30 or just 19:00. For a festival or multi-act night, use this for the overall event time and use "What time we play" below for our own slot.'
-      - name: playTime
-        label: What time we play
-        widget: string
+        hint: 'For a festival or multi-act night, the time of the whole event; our own slot goes in "We play from / until" below.'
+      - name: endTime
+        label: End time
+        widget: datetime
+        type: time
+        format: 'HH:mm'
         required: false
-        hint: 'Only for festivals or events with other acts/attractions — when do WE perform? e.g. 16:00–17:00. Leave empty if the Time above already refers only to us.'
+        hint: 'Leave empty to show only the start time.'
+      - name: playStart
+        label: We play from
+        widget: datetime
+        type: time
+        format: 'HH:mm'
+        required: false
+        hint: 'Only for festivals or events with other acts. Leave empty if the times above are already our own.'
+      - name: playEnd
+        label: We play until
+        widget: datetime
+        type: time
+        format: 'HH:mm'
+        required: false
       - name: title
         label: Title
         widget: string
@@ -66,9 +83,13 @@ collections:
         widget: string
         required: false
       - name: venue
-        label: Venue
+        label: Venue name
         widget: string
-        hint: 'e.g. Café De Hartjes · Amsterdam (the 📍 pin is added automatically)'
+        hint: 'Just the name, e.g. Café De Hartjes. The address goes in the Google Maps link below.'
+      - name: city
+        label: City
+        widget: string
+        hint: 'e.g. Amsterdam. The site shows 📍 Café De Hartjes · Amsterdam'
       - name: free
         label: Free entry
         widget: boolean
@@ -80,15 +101,25 @@ collections:
         default: false
         required: false
         hint: 'Shows the event struck through with a Cancelled badge'
+      - name: comingSoon
+        label: More info coming soon
+        widget: boolean
+        default: false
+        required: false
+        hint: 'Shows "More info soon" instead of the More info button, until the details or poster are ready.'
       - name: eventUrl
         label: Event page URL
         widget: string
         required: false
+        type: url
+        pattern: ['^https://', 'Paste the full link, starting with https://']
         hint: 'e.g. the organizer''s page. Shown as a small link on the show''s own page.'
       - name: ticketUrl
         label: Ticket URL
         widget: string
         required: false
+        type: url
+        pattern: ['^https://', 'Paste the full link, starting with https://']
         hint: 'Shows a Tickets / Free ticket button'
       - name: ticketEmbed
         label: Ticket shop embed (Weeztix)
@@ -104,4 +135,6 @@ collections:
         label: Google Maps URL
         widget: string
         required: false
+        type: url
+        pattern: ['^https://', 'Paste the full link, starting with https://']
         hint: 'Makes the venue name a link to the map'

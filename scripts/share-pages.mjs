@@ -9,6 +9,7 @@ import { promisify } from 'node:util'
 import { createHash } from 'node:crypto'
 import { resolve } from 'node:path'
 import { preview } from 'vite'
+import { showWhen, venueLabel } from '../src/showFormat.js'
 
 const SITE = 'https://www.bambasrodadesamba.com'
 const DIST = 'dist'
@@ -29,9 +30,9 @@ const template = readFileSync(showsPage, 'utf8')
 writeFileSync(showsPage, withPicture(template, pictures.shows ?? FALLBACK_PICTURE))
 
 for (const show of shows) {
-  const when = showWhen(show)
+  const when = showWhen(show, 'en-GB')
   const title = `${show.title} · ${when}`
-  const description = [show.cancelled && 'Cancelled', show.venue, show.free && 'Free entry']
+  const description = [show.cancelled && 'Cancelled', venueLabel(show), show.free && 'Free entry']
     .filter(Boolean)
     .join(' · ')
   const url = `${SITE}/shows/${show.slug}/`
@@ -115,17 +116,6 @@ function withPicture(html, picture) {
 
 function setMeta(html, attribute, value) {
   return html.replace(new RegExp(`(<meta ${attribute} content=")[^"]*`), `$1${escape(value)}`)
-}
-
-// "Fri 16 Oct, 20:30-00:00"
-function showWhen(show) {
-  const date = new Date(`${show.date}T12:00:00`).toLocaleDateString('en-GB', {
-    weekday: 'short',
-    day: 'numeric',
-    month: 'short',
-  })
-  const time = [show.time, show.playTime ? `Bambas ${show.playTime}` : null].filter(Boolean).join(' · ')
-  return time ? `${date}, ${time}` : date
 }
 
 function escape(text) {
