@@ -100,7 +100,7 @@ const showPast = ref(false);
   padding: 6px 4px;
   background: none;
   border: none;
-  color: rgba(251, 247, 240, 0.4);
+  color: var(--orange);
   font: inherit;
   font-size: 13px;
   font-weight: 600;
@@ -111,7 +111,8 @@ const showPast = ref(false);
 }
 .past-toggle:hover,
 .past-toggle:focus-visible {
-  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .past-shows {
   margin-top: 20px;
