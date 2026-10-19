@@ -100,11 +100,17 @@ collections:
       - name: venue
         label: Venue name
         widget: string
-        hint: 'Just the name, e.g. Café De Hartjes. The address goes in the Google Maps link below.'
+        required: false
+        hint: 'e.g. Chef. Leave empty if the place has no name.'
+      - name: address
+        label: Address
+        widget: string
+        required: false
+        hint: 'Street, number and postcode, without the city, e.g. Surinameplein 33, 1058 GM'
       - name: city
         label: City
         widget: string
-        hint: 'e.g. Amsterdam. The site shows 📍 Café De Hartjes · Amsterdam'
+        hint: 'e.g. Amsterdam. The site shows 📍 Chef · Surinameplein 33, 1058 GM Amsterdam'
       - name: free
         label: Free entry
         widget: boolean

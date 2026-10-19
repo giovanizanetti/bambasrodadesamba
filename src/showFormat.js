@@ -6,8 +6,10 @@
 export const timeRange = (start, end) =>
   start ? [start, end].filter(Boolean).map((time) => time.slice(0, 5)).join('–') : ''
 
-// "Café De Hartjes · Amsterdam"
-export const venueLabel = (show) => [show.venue, show.city].filter(Boolean).join(' · ')
+// "Chef · Surinameplein 33, 1058 GM Amsterdam", or "Café De Hartjes · Amsterdam"
+// without an address. A venue without a name shows just its address.
+export const venueLabel = (show) =>
+  [show.venue, [show.address, show.city].filter(Boolean).join(' ')].filter(Boolean).join(' · ')
 
 // "Fri 16 Oct, 20:30–00:00" in the given language. When the show has a
 // separate Bambas play time (festivals, multi-act nights), it's appended
