@@ -82,6 +82,21 @@ collections:
         label: Subtitle (Português)
         widget: string
         required: false
+      - name: description
+        label: Description
+        widget: text
+        required: false
+        hint: 'Shown on the show''s own page. Leave a blank line between paragraphs; start a line with ## for a heading or - for a bullet point.'
+      - name: description_nl
+        label: Description (Nederlands)
+        widget: text
+        required: false
+        hint: 'Leave empty to use the main description'
+      - name: description_pt
+        label: Description (Português)
+        widget: text
+        required: false
+        hint: 'Leave empty to use the main description'
       - name: venue
         label: Venue name
         widget: string
@@ -101,6 +116,12 @@ collections:
         default: false
         required: false
         hint: 'Shows the event struck through with a Cancelled badge'
+      - name: friday
+        label: Friday roda
+        widget: boolean
+        default: false
+        required: false
+        hint: 'Our monthly Friday roda. The QR code and www.bambasrodadesamba.com/friday always open the next show that has this ticked.'
       - name: comingSoon
         label: More info coming soon
         widget: boolean
@@ -120,7 +141,7 @@ collections:
         required: false
         type: url
         pattern: ['^https://', 'Paste the full link, starting with https://']
-        hint: 'Shows a Tickets / Free ticket button'
+        hint: 'Shows a Tickets / Free ticket button. A WeTicket link (…weticket.io/…/shop) puts the ticket shop on the show''s own page.'
       - name: ticketEmbed
         label: Ticket shop embed (Weeztix)
         widget: text
