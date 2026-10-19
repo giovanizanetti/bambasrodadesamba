@@ -2,9 +2,11 @@
 // real paths so a shared link gets its own WhatsApp preview:
 //   /shows/          only the "Upcoming shows" section
 //   /shows/<slug>/   one show (and its ticket shop), slug = the show's file name
+//   /friday/         the next Friday roda (the address on the QR code)
 const path = window.location.pathname.replace(/\/+$/, '')
 
 export const showsOnly = path === '/shows'
+export const fridayOnly = path === '/friday'
 export const showSlug = path.startsWith('/shows/') ? decodeURIComponent(path.slice('/shows/'.length)) : null
 
 export const showHref = (slug) => `/shows/${encodeURIComponent(slug)}/`
@@ -13,5 +15,5 @@ export const showHref = (slug) => `/shows/${encodeURIComponent(slug)}/`
 // on every other sub page they have to go back to the home page.
 export const sectionHref = (hash) => {
   if (showsOnly && hash === '#shows') return hash
-  return showsOnly || showSlug ? `/${hash}` : hash
+  return showsOnly || showSlug || fridayOnly ? `/${hash}` : hash
 }

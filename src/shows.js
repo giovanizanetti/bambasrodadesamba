@@ -30,6 +30,24 @@ export const upcomingShows = allShows
   .sort((a, b) => a.date.localeCompare(b.date))
   .map(withDate)
 
+// A show's description as blocks for the page: a blank line between
+// paragraphs, "## " starts a heading, lines starting with "- " are a list.
+export const descriptionBlocks = (text) =>
+  (text ?? '')
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .map((block) => {
+      if (block.startsWith('## ')) return { type: 'heading', text: block.slice(3).trim() }
+      const lines = block.split('\n').map((line) => line.trim())
+      if (lines.every((line) => line.startsWith('- '))) return { type: 'list', items: lines.map((line) => line.slice(2)) }
+      return { type: 'paragraph', text: lines.join(' ') }
+    })
+
+// The next Friday roda: the soonest upcoming show ticked "Friday roda" in the
+// CMS. /friday, the address on the QR code, opens this show.
+export const nextFriday = upcomingShows.find((show) => show.friday && !show.cancelled) ?? null
+
 // Shows that have taken place, most recent first. Cancelled ones are left out.
 export const pastShows = allShows
   .filter((show) => show.date < todayIso && !show.cancelled)
@@ -50,6 +68,14 @@ export const weeztixGuid = (show) =>
   show.ticketEmbed?.match(WEEZTIX_GUID_ATTR)?.[1] ?? show.ticketEmbed?.match(WEEZTIX_SHOP_URL)?.[1] ?? null
 
 export const weeztixShopUrl = (guid) => `https://shop.weeztix.com/${guid}`
+
+const WETICKET_SHOP_URL = /^https:\/\/[a-z0-9-]+\.weticket\.io\/[^\s"'<>]+$/i
+
+// A WeTicket Ticket URL: its shop is embedded on the show's own page.
+export const weticketShopUrl = (show) => (WETICKET_SHOP_URL.test(show.ticketUrl ?? '') ? show.ticketUrl : null)
+
+// Whether the show sells its tickets in a shop on its own page.
+export const hasOwnShop = (show) => Boolean(weeztixGuid(show) || weticketShopUrl(show))
 
 const WEEZTIX_INJECTOR = 'https://v1.widget.shop.weeztix.com/injector.js'
 let injectorLoading = null

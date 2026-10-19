@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useI18n } from "../i18n";
-import { weeztixGuid, showWhen, timeRange, venueLabel, whatsappShareHref, SITE_URL } from "../shows";
+import { hasOwnShop, showWhen, timeRange, venueLabel, whatsappShareHref, SITE_URL } from "../shows";
 import { showHref } from "../router";
 import WhatsappIcon from "./WhatsappIcon.vue";
 
@@ -29,8 +29,8 @@ const show = computed(() => ({
   info: `📍 ${venueLabel(props.show)}`,
   time: timeRange(props.show.startTime, props.show.endTime),
   playTime: timeRange(props.show.playStart, props.show.playEnd),
-  ticketLink: weeztixGuid(props.show) ? `${showHref(props.show.slug)}#tickets` : props.show.ticketUrl,
-  ticketExternal: !weeztixGuid(props.show),
+  ticketLink: hasOwnShop(props.show) ? `${showHref(props.show.slug)}#tickets` : props.show.ticketUrl,
+  ticketExternal: !hasOwnShop(props.show),
   // In a list, More info opens the show's own page (poster, tickets).
   pageLink: props.ownPage ? null : showHref(props.show.slug),
 }));
@@ -52,6 +52,7 @@ const shareHref = computed(() =>
       <div v-if="past" class="y">{{ show.date.slice(0, 4) }}</div>
     </div>
     <div class="show-info">
+      <span v-if="show.friday && !past" class="friday-badge">{{ t('shows.monthlyFriday') }}</span>
       <h3>{{ show.title }}</h3>
       <p v-if="show.subtitle" class="show-subtitle">{{ show.subtitle }}</p>
       <div class="show-meta">
@@ -175,6 +176,15 @@ const shareHref = computed(() =>
   font-size: 13px; font-weight: 700; color: var(--orange);
 }
 .nowrap { white-space: nowrap; }
+/* The monthly Friday roda ("Friday roda" ticked in the CMS). */
+.friday-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--ink); background: var(--orange); border-radius: 6px;
+  padding: 3px 9px;
+}
 .free-badge {
   font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
   color: var(--orange); border: 1px solid var(--orange); border-radius: 20px;

@@ -51,7 +51,29 @@ for (const show of shows) {
   writeFileSync(`${DIST}/shows/${show.slug}/index.html`, html)
 }
 
-console.log(`Share pages: ${shows.length} show pages, ${Object.keys(pictures).length} preview pictures.`)
+// /friday/, the address on the QR code. The browser picks the next Friday roda
+// itself; the preview is the one that was next when the site was built.
+const today = new Date().toISOString().slice(0, 10)
+const nextFriday = shows
+  .filter((show) => show.friday && !show.cancelled && show.date >= today)
+  .sort((a, b) => a.date.localeCompare(b.date))[0]
+const fridayTitle = `${nextFriday?.title ?? 'Friday roda'} · Bambas Roda de Samba`
+const fridayDescription = nextFriday
+  ? [showWhen(nextFriday, 'en-GB'), venueLabel(nextFriday)].join(' · ')
+  : 'Our monthly Friday roda de samba. Date coming soon.'
+let friday = template
+  .replace(/<title>[^<]*<\/title>/, `<title>${escape(fridayTitle)}</title>`)
+  .replace(/(<link rel="canonical" href=")[^"]*/, `$1${SITE}/friday/`)
+friday = setMeta(friday, 'name="description"', fridayDescription)
+friday = setMeta(friday, 'property="og:url"', `${SITE}/friday/`)
+friday = setMeta(friday, 'property="og:title"', fridayTitle)
+friday = setMeta(friday, 'property="og:description"', fridayDescription)
+friday = setMeta(friday, 'property="og:image:alt"', fridayTitle)
+friday = withPicture(friday, (nextFriday && pictures[nextFriday.slug]) ?? FALLBACK_PICTURE)
+mkdirSync(`${DIST}/friday`, { recursive: true })
+writeFileSync(`${DIST}/friday/index.html`, friday)
+
+console.log(`Share pages: ${shows.length} show pages, /friday (${nextFriday?.slug ?? 'no date yet'}), ${Object.keys(pictures).length} preview pictures.`)
 
 // Screenshots of the preview cards, served from the built site.
 // Without Chrome (e.g. on a machine that doesn't have it) the pages use the logo.
