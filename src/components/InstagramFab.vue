@@ -33,4 +33,9 @@ const IG_URL = 'https://www.instagram.com/bambasrodadesamba/'
   .ig-float { right: 16px; bottom: 16px; width: 52px; height: 52px; }
   .ig-float svg { width: 27px; height: 27px; }
 }
+/* On phones the WeTicket shop fills the screen with its Next button at the
+   bottom: keep out of its way. */
+@media (max-width: 560px) {
+  body:has(.weticket) .ig-float { display: none; }
+}
 </style>

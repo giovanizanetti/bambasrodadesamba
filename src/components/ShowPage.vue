@@ -186,7 +186,16 @@ onBeforeUnmount(() => {
 @media (max-width: 560px) {
   #show { padding-top: 110px; }
   .shop { padding: 6px; border-radius: 12px; }
-  .weticket { height: 620px; }
-  .weticket.active { height: 1280px; }
+  /* WeTicket pins its Next button to the bottom of the frame, so on phones
+     the frame is one screen tall (under the 66px nav bar) and the shop
+     scrolls inside it: Next stays in sight instead of a screen of grey
+     below the tickets. Edge to edge, so the shop gets the full width. */
+  .shop:has(.weticket) {
+    margin-inline: -18px;
+    border-radius: 0;
+    scroll-margin-top: 66px;
+  }
+  .weticket,
+  .weticket.active { height: max(480px, calc(100svh - 66px)); }
 }
 </style>
