@@ -97,6 +97,13 @@ onBeforeUnmount(() => {
             :class="{ active: weticketActive }"
           ></iframe>
         </div>
+        <a
+          v-if="weticketUrl"
+          :href="weticketUrl"
+          target="_blank"
+          rel="noopener"
+          class="event-link shop-tab"
+        >{{ t("shows.shopNewTab") }} ↗</a>
 
         <img v-if="show.image" :src="show.image" :alt="title" class="poster" />
       </template>
@@ -173,6 +180,7 @@ onBeforeUnmount(() => {
   transition: height 0.3s ease;
 }
 .weticket.active { height: 880px; }
+.shop-tab { margin-top: 12px; }
 /* The shop has its own grey background: no white border around it. */
 .shop:has(.weticket) {
   min-height: 0;
