@@ -7,6 +7,7 @@ import { useI18n } from '../i18n'
 const { t } = useI18n()
 
 const videos = [
+  { src: '/video/live-roda-logo-reel.mp4', poster: '/video/live-roda-logo-reel-poster.jpg', captionKey: '' },
   { src: '/video/brazilian-elections-party-2026.mp4', poster: '/video/brazilian-elections-party-2026-poster.jpg', captionKey: 'video.electionsCaption' },
   { src: '/video/wagner-moura-birthday.mp4', poster: birthdayPoster, captionKey: 'video.birthdayCaption' },
   { src: '/video/institucional.mp4', poster, captionKey: '' },
