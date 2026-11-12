@@ -12,7 +12,8 @@ import InstagramFab from './components/InstagramFab.vue'
 import ShowPage from './components/ShowPage.vue'
 import ShowsCard from './components/ShowsCard.vue'
 import EventPreview from './components/EventPreview.vue'
-import { fridayOnly, showSlug, showsOnly } from './router'
+import RotterdamPage from './components/RotterdamPage.vue'
+import { fridayOnly, rotterdamOnly, showSlug, showsOnly } from './router'
 import { nextFriday } from './shows'
 
 // The WhatsApp preview pictures are screenshots of these pages, taken at
@@ -29,6 +30,7 @@ const cardParam = showsOnly ? new URLSearchParams(window.location.search).get('c
     <ShowPage v-if="showSlug" :slug="showSlug" />
     <ShowPage v-else-if="fridayOnly" :slug="nextFriday?.slug" friday />
     <ShowsSection v-else-if="showsOnly" class="shows-page" />
+    <RotterdamPage v-else-if="rotterdamOnly" />
     <template v-else>
       <HeroSection />
       <Marquee />
