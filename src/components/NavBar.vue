@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import logoNavbar from '../assets/photos/logo_horizontal_navbar.png'
 import { useI18n } from '../i18n'
-import { sectionHref, showsOnly } from '../router'
+import { sectionHref, showsOnly, rotterdamOnly } from '../router'
 
 const { t, locale, setLocale, locales } = useI18n()
 
@@ -28,7 +28,7 @@ const currentFlag = () => locales.find(l => l.code === locale.value)?.flag ?? 'ð
 
 <template>
   <nav>
-    <a :href="showsOnly ? '/' : '#'" class="brand" @click="closeMenu"><img :src="logoNavbar" alt="Bambas Roda de Samba" /></a>
+    <a :href="showsOnly || rotterdamOnly ? '/' : '#'" class="brand" @click="closeMenu"><img :src="logoNavbar" alt="Bambas Roda de Samba" /></a>
 
     <ul :class="{ open: menuOpen }">
       <li v-for="link in links" :key="link.href">

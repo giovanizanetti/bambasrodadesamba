@@ -5,12 +5,13 @@ import { sectionHref } from '../router'
 
 const { t } = useI18n()
 
-const menuKeys = ['about', 'videos', 'gallery', 'shows', 'book']
+const menuKeys = ['about', 'videos', 'gallery', 'shows', 'rotterdam', 'book']
 const menuHrefs = {
   about: sectionHref('#about'),
   videos: sectionHref('#videos'),
   gallery: sectionHref('#photos'),
   shows: sectionHref('#shows'),
+  rotterdam: '/rotterdam/',
   book: sectionHref('#book'),
 }
 
